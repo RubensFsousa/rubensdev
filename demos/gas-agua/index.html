@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chama Azul Gás &amp; Água | Entrega em Messejana</title>
+<meta name="description" content="Projeto conceito de landing page para distribuidora de gás e água em Messejana, Fortaleza. Pedido em 2 toques pelo WhatsApp e calculadora de fim do botijão. Feito por Rubens Dev.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b3fa8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b3fa8'/%3E%3Cpath d='M16 5c1 4 6 7 6 13a6 6 0 0 1-12 0c0-3 2-4 3-6 1 2 2 2 2 3 1-3 1-6 1-10z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#f6f4ee; --ink:#0d1526; --ink-soft:#4a5368; --blue:#0b3fa8; --blue-ink:#ffffff;
+  --orange:#e8590c; --orange-ink:#1a0d03; --line:#0d1526; --card:#ffffff; --tint:#e6ecf8;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#0c111d; --ink:#f1efe8; --ink-soft:#a9b1c3; --blue:#5b8cff; --blue-ink:#07122e;
+  --orange:#ff8a3d; --orange-ink:#1a0d03; --line:#f1efe8; --card:#141b2c; --tint:#16213a; color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.55 var(--display);overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+h1,h2,h3{margin:0;line-height:.95;font-weight:900;font-stretch:75%;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:clamp(3rem,13vw,7.5rem)}
+h2{font-size:clamp(2.2rem,8vw,4rem)}
+h3{font-size:1.5rem;font-stretch:85%}
+.tag{font:500 .78rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:0}
+section{padding:56px 0;border-top:3px solid var(--line)}
+.sec-head{display:grid;gap:8px;margin-bottom:28px}
+.sec-head p{margin:0;max-width:52ch;color:var(--ink-soft)}
+.sec-head p.tag{color:var(--ink-soft)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 24px;font:800 1.05rem var(--display);font-stretch:90%;border:3px solid var(--line);background:var(--orange);color:var(--orange-ink);text-decoration:none;cursor:pointer;box-shadow:5px 5px 0 var(--line);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--line)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.btn.blue{background:var(--blue);color:var(--blue-ink)}
+.btn[aria-disabled=true]{opacity:.45;pointer-events:none}
+/* demo bar */
+.demo{background:var(--ink);color:var(--paper);font:500 .8rem var(--mono);padding:8px 16px;text-align:center}
+.demo a{color:var(--orange);font-weight:600}
+/* header */
+header.top{border-bottom:3px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+.brand{font-weight:900;font-stretch:75%;font-size:1.5rem;text-decoration:none;display:flex;align-items:center;gap:8px;line-height:1}
+.brand span{color:var(--blue)}
+.brand svg{width:26px;height:26px;flex:none}
+.top nav{display:none;gap:22px;font:500 .85rem var(--mono)}
+.top nav a{text-decoration:none}.top nav a:hover{text-decoration:underline}
+.status{font:500 .78rem var(--mono);display:flex;align-items:center;gap:6px}
+.status i{width:10px;height:10px;border-radius:50%;background:#999;display:inline-block}
+.status.on i{background:#1a9b4b}.status.off i{background:var(--orange)}
+@media(min-width:760px){.top nav{display:flex}}
+/* hero */
+.hero{border-top:0;padding:40px 0 0}
+.hero-grid{display:grid;gap:28px}
+.hero p.lead{font-size:1.2rem;max-width:34ch;margin:20px 0 28px}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.big-time{display:flex;align-items:flex-end;gap:14px;border-top:3px solid var(--line);padding-top:16px;margin-top:32px}
+.big-time b{font:900 clamp(4rem,18vw,8rem)/.8 var(--display);font-stretch:62%;color:var(--blue)}
+.big-time span{font:500 .85rem var(--mono);padding-bottom:4px;max-width:22ch}
+.hero-art{display:flex;align-items:flex-end;justify-content:center;gap:12px;background:var(--tint);border:3px solid var(--line);padding:24px 16px 10px;min-height:280px;position:relative}
+.hero-art svg{display:block;position:relative;z-index:1}
+.hero-art .ground{position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--line)}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.25fr 1fr;align-items:stretch;gap:40px}.hero{padding-top:56px}}
+.strip{margin-top:48px;background:var(--blue);color:var(--blue-ink);border-top:3px solid var(--line)}
+.strip ul{list-style:none;margin:0;padding:14px 0;display:flex;flex-wrap:wrap;gap:8px 28px;font:600 .85rem var(--mono);text-transform:uppercase;letter-spacing:.06em}
+/* preços */
+.price-table{border:3px solid var(--line);background:var(--card)}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:20px 16px;border-bottom:3px solid var(--line);align-items:center}
+.row:last-child{border-bottom:0}
+.row .name{font-size:1.7rem;font-weight:900;font-stretch:75%;line-height:1}
+.row .desc{grid-column:1;color:var(--ink-soft);font-size:.98rem}
+.row .val{grid-row:1/3;grid-column:2;text-align:right;font:900 clamp(2.4rem,9vw,3.6rem)/1 var(--display);font-stretch:62%;color:var(--blue)}
+.row .val small{font:500 .8rem var(--mono);color:var(--ink-soft);display:block}
+.note{font:400 .85rem var(--mono);color:var(--ink-soft);margin:14px 0 0;max-width:70ch}
+@media(min-width:760px){.row{padding:24px 28px;grid-template-columns:220px 1fr auto}.row .desc{grid-column:2}.row .val{grid-column:3}}
+/* pedido */
+#pedido{background:var(--tint)}
+.order{display:grid;gap:24px}
+.panel{background:var(--card);border:3px solid var(--line);padding:20px 16px}
+.panel h3{margin-bottom:14px}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:center;padding:14px 0;border-bottom:2px dashed var(--ink-soft)}
+.item:first-child{padding-top:0}
+.item .n{font-weight:800;font-size:1.15rem;line-height:1.1}
+.item .p{font:400 .82rem var(--mono);color:var(--ink-soft)}
+.stepper{grid-row:1/3;grid-column:2;display:flex;align-items:center;border:3px solid var(--line)}
+.stepper button{width:48px;height:48px;border:0;background:var(--paper);color:var(--ink);font:800 1.6rem var(--display);cursor:pointer}
+.stepper button:hover{background:var(--orange);color:var(--orange-ink)}
+.stepper output{min-width:42px;text-align:center;font:600 1.3rem var(--mono)}
+fieldset{border:0;padding:0;margin:18px 0 0;min-width:0}
+legend{font:600 .78rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:0;margin-bottom:8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{position:relative}
+.opts input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.opts span{display:inline-flex;align-items:center;min-height:46px;padding:0 16px;border:3px solid var(--line);font-weight:700;background:var(--paper)}
+.opts input:checked+span{background:var(--blue);color:var(--blue-ink)}
+.opts input:focus-visible+span{outline:3px solid var(--orange);outline-offset:2px}
+select,input[type=number],input[type=date]{width:100%;min-height:50px;padding:0 12px;font:500 1rem var(--display);color:var(--ink);background:var(--paper);border:3px solid var(--line);border-radius:0}
+label.f{display:block;font:600 .78rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:18px}
+label.f select,label.f input{margin-top:6px}
+.hint{font:400 .85rem var(--mono);margin:8px 0 0;color:var(--ink-soft);min-height:1.3em}
+.summary{border:3px solid var(--line);background:var(--ink);color:var(--paper);padding:20px 16px;align-self:start}
+.summary h3{margin-bottom:12px}
+.summary pre{margin:0;white-space:pre-wrap;font:400 .9rem/1.5 var(--mono);min-height:7em}
+.total{display:flex;justify-content:space-between;align-items:flex-end;border-top:2px solid var(--paper);margin:16px 0;padding-top:12px;font:500 .85rem var(--mono)}
+.total b{font:900 3rem/1 var(--display);font-stretch:62%;color:var(--orange)}
+.summary .btn{width:100%;box-shadow:5px 5px 0 var(--paper);border-color:var(--paper)}
+.summary .small{color:#b8bfd0;margin:12px 0 0}
+@media(min-width:860px){.order{grid-template-columns:1.3fr 1fr}.panel,.summary{padding:28px}}
+/* calculadora */
+.calc{display:grid;gap:24px}
+.calc-grid{display:grid;gap:0 16px}
+@media(min-width:560px){.calc-grid{grid-template-columns:1fr 1fr}.calc-grid .full{grid-column:1/-1}}
+.result{border:3px solid var(--line);background:var(--card);padding:24px 16px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.result .when{font:900 clamp(3rem,13vw,5.5rem)/.9 var(--display);font-stretch:62%;color:var(--blue)}
+.result .when.warn{color:var(--orange)}
+.result p{margin:0}
+.bar{height:18px;border:3px solid var(--line);background:var(--paper);margin:6px 0}
+.bar div{height:100%;background:var(--blue);width:0;transition:width .5s}
+.bar div.warn{background:var(--orange)}
+.small{font:400 .82rem/1.5 var(--mono);color:var(--ink-soft)}
+@media(min-width:860px){.calc{grid-template-columns:1fr 1fr}.result{padding:32px}}
+/* bairros */
+.areas{display:grid;gap:40px}
+.bairros{border:3px solid var(--line);background:var(--card);list-style:none;margin:0;padding:0}
+.bairros li{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:2px solid var(--line);font-weight:700}
+.bairros li:last-child{border-bottom:0}
+.bairros li span{font:500 .9rem var(--mono);color:var(--blue)}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;margin:0;font:500 1rem var(--mono)}
+.hours dt{color:var(--ink-soft)}.hours dd{margin:0;font-weight:600}
+.hours-box{border:3px solid var(--line);padding:20px 16px;background:var(--card)}
+.hours-box h3{margin-bottom:14px}
+.hours-box p{margin:16px 0 0}
+@media(min-width:860px){.areas{grid-template-columns:1fr 1fr;gap:40px}}
+/* segurança */
+.safe{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;border-top:3px solid var(--line)}
+.safe li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:12px;padding:18px 0;border-bottom:3px solid var(--line)}
+.safe li::before{content:counter(s,decimal-leading-zero);font:900 2.4rem/1 var(--display);font-stretch:62%;color:var(--orange)}
+.safe b{display:block;font-size:1.2rem;line-height:1.2}
+.safe span{color:var(--ink-soft)}
+.alert{margin:28px 0 0;background:var(--orange);color:var(--orange-ink);border:3px solid var(--line);padding:16px;font-weight:700}
+@media(min-width:860px){.safe{grid-template-columns:1fr 1fr;column-gap:40px}}
+/* rodapé */
+footer{background:var(--ink);color:var(--paper);padding:48px 0 32px;border-top:3px solid var(--line)}
+footer .grid{display:grid;gap:28px}
+footer h2{font-size:clamp(2.4rem,9vw,4.4rem)}
+footer a{color:var(--orange)}
+footer .btn{color:var(--orange-ink);border-color:var(--paper);box-shadow:5px 5px 0 var(--paper)}
+footer p{margin:0 0 6px}
+.legal{font:400 .78rem/1.5 var(--mono);color:#b8bfd0;margin-top:32px!important;border-top:1px solid #4a5368;padding-top:16px}
+@media(min-width:860px){footer .grid{grid-template-columns:1.4fr 1fr}}
+</style>
+</head>
+<body>
+<div class="demo">Demo criada por Rubens Dev — <a href="https://rubensdev.com.br/">quer um site assim?</a></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Chama Azul Gás e Água, início">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1 5 8 8 8 16a8 8 0 0 1-16 0c0-4 2-6 4-8 1 3 2 3 3 4 1-4 1-7 1-12z" fill="#e8590c"/><path d="M16 14c1 3 4 4 4 8a4 4 0 0 1-8 0c0-2 2-3 2-5 1 1 2 1 2 2z" fill="#0b3fa8"/></svg>
+      Chama <span>Azul</span>
+    </a>
+    <nav aria-label="Seções">
+      <a href="#precos">Preços</a><a href="#pedido">Pedir</a><a href="#calculadora">Quando acaba?</a><a href="#bairros">Bairros</a><a href="#seguranca">Segurança</a>
+    </nav>
+    <div class="status" id="status" role="status"><i></i><span>Horário</span></div>
+  </div>
+</header>
+
+<main id="topo">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="tag">Distribuidora em Messejana, Fortaleza</p>
+      <h1>Gás e água na sua <em>porta.</em></h1>
+      <p class="lead">Botijão P13, P45 para comércio e galão de água de 20 litros. Você pede, a gente sai na moto.</p>
+      <p><a class="btn" href="#pedido">Pedir agora</a></p>
+      <div class="big-time"><b>35</b><span>minutos em média até a sua porta, em Messejana e vizinhos</span></div>
+    </div>
+    <div class="hero-art" role="img" aria-label="Ilustração de um botijão P13 e um galão de água de 20 litros">
+      <svg width="130" height="250" viewBox="0 0 130 250" aria-hidden="true">
+        <rect x="42" y="4" width="46" height="24" fill="none" stroke="#0d1526" stroke-width="6"/>
+        <rect x="52" y="24" width="26" height="22" fill="#0d1526"/>
+        <path d="M12 76c0-24 24-34 53-34s53 10 53 34v150H12z" fill="#0b3fa8" stroke="#0d1526" stroke-width="5"/>
+        <rect x="12" y="226" width="106" height="20" fill="#0d1526"/>
+        <rect x="12" y="120" width="106" height="52" fill="#f6f4ee" stroke="#0d1526" stroke-width="5"/>
+        <text x="65" y="156" text-anchor="middle" font-family="Archivo,Arial" font-weight="900" font-size="34" fill="#0d1526">P13</text>
+        <path d="M65 62c3 8 14 12 14 24a14 14 0 0 1-28 0c0-6 4-9 6-12 2 4 4 4 5 6 2-6 3-10 3-18z" fill="#e8590c"/>
+      </svg>
+      <svg width="116" height="220" viewBox="0 0 116 220" aria-hidden="true">
+        <rect x="38" y="4" width="40" height="18" fill="#0d1526"/>
+        <path d="M30 22h56l18 40v150H12V62z" fill="#cfe0ff" stroke="#0d1526" stroke-width="5"/>
+        <path d="M17 112h82v95H17z" fill="#0b3fa8"/>
+        <path d="M17 112c14-8 22 8 41 0s27 8 41 0" fill="none" stroke="#f6f4ee" stroke-width="4"/>
+        <rect x="12" y="206" width="92" height="12" fill="#0d1526"/>
+        <text x="58" y="166" text-anchor="middle" font-family="Archivo,Arial" font-weight="900" font-size="30" fill="#fff">20 L</text>
+      </svg>
+      <div class="ground"></div>
+    </div>
+  </div>
+  <div class="strip"><div class="wrap"><ul><li>Pix, cartão e dinheiro na entrega</li><li>Troca de vasilhame</li><li>Sem taxa em Messejana</li></ul></div></div>
+</section>
+
+<section id="precos">
+  <div class="wrap">
+    <div class="sec-head"><p class="tag">Tabela</p><h2>Preço na porta, sem surpresa</h2></div>
+    <div class="price-table">
+      <div class="row"><div class="name">Botijão P13</div><div class="desc">Gás de cozinha residencial, 13 kg. Com troca do vasilhame vazio.</div><div class="val"><small>R$</small>120</div></div>
+      <div class="row"><div class="name">Botijão P45</div><div class="desc">Para restaurante, lanchonete e condomínio. 45 kg, com troca.</div><div class="val"><small>R$</small>465</div></div>
+      <div class="row"><div class="name">Água 20 L</div><div class="desc">Água mineral em galão retornável. Com troca do galão vazio.</div><div class="val"><small>R$</small>13</div></div>
+    </div>
+    <p class="note">Sem vasilhame para trocar, o botijão ou galão novo é cobrado à parte (valor combinado no pedido). Preços de demonstração.</p>
+  </div>
+</section>
+
+<section id="pedido">
+  <div class="wrap">
+    <div class="sec-head"><p class="tag">Pedido rápido</p><h2>Escolha, toque, pronto</h2><p>Monte o pedido aqui e a mensagem já sai pronta no WhatsApp.</p></div>
+    <div class="order">
+      <div class="panel">
+        <h3>O que você precisa</h3>
+        <div id="items"></div>
+        <fieldset><legend>Tem vasilhame vazio para trocar?</legend>
+          <div class="opts">
+            <label><input type="radio" name="troca" value="Sim, tenho vasilhame para trocar" checked><span>Sim</span></label>
+            <label><input type="radio" name="troca" value="Não, preciso do vasilhame também"><span>Não</span></label>
+          </div></fieldset>
+        <fieldset><legend>Pagamento na entrega</legend>
+          <div class="opts">
+            <label><input type="radio" name="pag" value="Pix" checked><span>Pix</span></label>
+            <label><input type="radio" name="pag" value="Cartão"><span>Cartão</span></label>
+            <label><input type="radio" name="pag" value="Dinheiro"><span>Dinheiro</span></label>
+          </div></fieldset>
+        <label class="f" for="bairro">Seu bairro
+          <select id="bairro"></select></label>
+        <p class="hint" id="bairroMsg" aria-live="polite"></p>
+      </div>
+      <div class="summary">
+        <h3>Seu pedido</h3>
+        <pre id="resumo">Escolha ao menos um item.</pre>
+        <div class="total"><span>Total estimado</span><b id="total">R$ 0</b></div>
+        <a class="btn" id="enviar" href="#" target="_blank" rel="noopener" aria-disabled="true">Enviar pelo WhatsApp</a>
+        <p class="small">Demonstração: a mensagem vai para o WhatsApp do Rubens Dev, não para uma distribuidora real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calculadora">
+  <div class="wrap">
+    <div class="sec-head"><p class="tag">Calculadora</p><h2>Quando meu gás acaba?</h2><p>Responda três coisas e veja uma estimativa para o seu botijão P13. Dá também para baixar um lembrete para o calendário.</p></div>
+    <div class="calc">
+      <div class="panel">
+        <div class="calc-grid">
+          <label class="f" for="pessoas" style="margin-top:0">Pessoas na casa<input id="pessoas" type="number" min="1" max="12" value="4" inputmode="numeric"></label>
+          <label class="f" for="ref" style="margin-top:0">Refeições por dia no fogão<input id="ref" type="number" min="1" max="6" value="3" inputmode="numeric"></label>
+          <label class="f full" for="troca-data">Data da última troca<input id="troca-data" type="date"></label>
+        </div>
+        <p class="small" style="margin:16px 0 0">Conta usada: consumo por dia = 0,05 kg x pessoas + 0,05 kg x refeições. Duração = 13 kg ÷ consumo. É uma estimativa: forno, chuveiro a gás e hábitos mudam o resultado.</p>
+      </div>
+      <div class="result" aria-live="polite">
+        <p class="tag">Seu botijão deve acabar por volta de</p>
+        <div class="when" id="quando">--</div>
+        <div class="bar" aria-hidden="true"><div id="barra"></div></div>
+        <p id="detalhe"></p>
+        <p><a class="btn blue" id="ics" href="#" download="lembrete-gas.ics">Me lembre 3 dias antes</a></p>
+        <p class="small">Baixa um arquivo .ics que abre no Google Agenda, iPhone ou Outlook. Nada é enviado a lugar nenhum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bairros">
+  <div class="wrap areas">
+    <div>
+      <div class="sec-head"><p class="tag">Onde entregamos</p><h2>Bairros e tempo médio</h2></div>
+      <ul class="bairros" id="listaBairros"></ul>
+    </div>
+    <div>
+      <div class="sec-head"><p class="tag">Horário</p><h2>Aberto até as 22h</h2></div>
+      <div class="hours-box">
+        <h3>Atendimento</h3>
+        <dl class="hours"><dt>Seg a sáb</dt><dd>7h às 22h</dd><dt>Domingo</dt><dd>8h às 20h</dd><dt>Feriado</dt><dd>8h às 18h</dd></dl>
+        <p>Rua das Cajazeiras, 412 — Messejana, Fortaleza-CE</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="seguranca">
+  <div class="wrap">
+    <div class="sec-head"><p class="tag">Segurança</p><h2>Cuidados com o botijão</h2><p>Coisas simples que evitam acidente. Vale mostrar para quem mora com você.</p></div>
+    <ol class="safe">
+      <li><div><b>Fique de olho na mangueira</b><span>Troque quando tiver rachadura ou passar da validade impressa nela.</span></div></li>
+      <li><div><b>Teste com espuma</b><span>Água com detergente nas conexões. Se fizer bolha, tem vazamento.</span></div></li>
+      <li><div><b>Botijão sempre em pé</b><span>Em lugar ventilado, longe de fogão aceso e do sol forte.</span></div></li>
+      <li><div><b>Confira o lacre na entrega</b><span>O botijão cheio vem com lacre. Pode pedir para o entregador mostrar.</span></div></li>
+    </ol>
+    <p class="alert"><strong>Sentiu cheiro de gás?</strong> Não acenda luz nem fósforo. Feche o registro, abra portas e janelas e saia do local. Bombeiros: 193.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div><h2>Pediu, chegou.</h2><p style="margin-top:14px">Chama Azul Gás &amp; Água</p><p>Rua das Cajazeiras, 412 — Messejana, Fortaleza-CE</p><p>Instagram: @chamaazul.messejana</p></div>
+      <div><p><a class="btn" href="#pedido">Montar pedido</a></p></div>
+    </div>
+    <p class="legal">Projeto conceito: Chama Azul Gás &amp; Água é um negócio fictício, assim como endereço e preços. Ilustrações em SVG feitas para esta demo. Criado por <a href="https://rubensdev.com.br/">Rubens Dev</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var NOME = "Chama Azul Gás & Água";
+  var WA = "https://wa.me/5585985366270?text=";
+  var ITENS = [
+    {id:"p13", n:"Botijão P13", p:120, d:"13 kg, uso residencial"},
+    {id:"p45", n:"Botijão P45", p:465, d:"45 kg, comércio"},
+    {id:"agua", n:"Água mineral 20 L", p:13, d:"galão retornável"}
+  ];
+  var BAIRROS = [
+    ["Messejana",30],["Jardim das Oliveiras",35],["Cambeba",35],["Curió",40],
+    ["Lagoa Sapiranga",40],["Guajeru",40],["Passaré",45],["Alagadiço Novo",45]
+  ];
+  var qtd = {p13:1,p45:0,agua:0};
+  var $ = function(i){return document.getElementById(i)};
+  var brl = function(v){return "R$ "+v.toLocaleString("pt-BR")};
+
+  var box = $("items");
+  ITENS.forEach(function(it){
+    var d = document.createElement("div"); d.className="item";
+    d.innerHTML = '<div class="n">'+it.n+'</div><div class="p">'+brl(it.p)+' · '+it.d+'</div>'+
+      '<div class="stepper"><button type="button" aria-label="Menos '+it.n+'" data-i="'+it.id+'" data-d="-1">−</button>'+
+      '<output id="q-'+it.id+'">'+qtd[it.id]+'</output>'+
+      '<button type="button" aria-label="Mais '+it.n+'" data-i="'+it.id+'" data-d="1">+</button></div>';
+    box.appendChild(d);
+  });
+  box.addEventListener("click",function(e){
+    var b = e.target.closest("button"); if(!b) return;
+    var id = b.dataset.i; qtd[id] = Math.max(0,Math.min(20,qtd[id]+Number(b.dataset.d)));
+    $("q-"+id).textContent = qtd[id]; render();
+  });
+
+  var sel = $("bairro");
+  sel.innerHTML = '<option value="">Escolha seu bairro</option>'+BAIRROS.map(function(b){return '<option>'+b[0]+'</option>'}).join("")+'<option value="outro">Outro bairro</option>';
+  $("listaBairros").innerHTML = BAIRROS.map(function(b){return '<li>'+b[0]+'<span>~'+b[1]+' min</span></li>'}).join("");
+  function bairroInfo(){
+    var v = sel.value, m = $("bairroMsg");
+    if(!v){m.textContent="";return}
+    if(v==="outro"){m.textContent="Ainda não confirmamos entrega aí. Mande o pedido e a gente responde se dá.";return}
+    var t = BAIRROS.filter(function(b){return b[0]===v})[0][1];
+    m.textContent = "Atendemos "+v+". Tempo médio: "+t+" minutos.";
+  }
+  sel.addEventListener("change",function(){bairroInfo();render()});
+  document.querySelectorAll('input[name="troca"],input[name="pag"]').forEach(function(r){r.addEventListener("change",render)});
+
+  function val(name){return document.querySelector('input[name="'+name+'"]:checked').value}
+  function render(){
+    var linhas=[], total=0;
+    ITENS.forEach(function(it){ if(qtd[it.id]>0){linhas.push(qtd[it.id]+"x "+it.n); total+=qtd[it.id]*it.p}});
+    var troca = val("troca"), pag = val("pag"), semVas = troca.indexOf("Não")===0;
+    var b = sel.value==="outro" ? "outro bairro (confirmar)" : sel.value;
+    var a = $("enviar");
+    if(!linhas.length){ $("resumo").textContent="Escolha ao menos um item."; $("total").textContent="R$ 0"; a.setAttribute("aria-disabled","true"); a.href="#"; return }
+    var txt = "[Demo "+NOME+"] Olá! Quero pedir:\n"+linhas.join("\n")+"\nTroca de vasilhame: "+troca+"\nPagamento: "+pag+(b?"\nBairro: "+b:"")+"\nTotal estimado: "+brl(total)+(semVas?" (mais vasilhame, a combinar)":"");
+    $("resumo").textContent = linhas.join("\n")+"\n\nTroca: "+(semVas?"não, preciso do vasilhame":"sim")+"\nPagamento: "+pag+(b?"\nBairro: "+b:"");
+    $("total").textContent = brl(total);
+    a.removeAttribute("aria-disabled"); a.href = WA+encodeURIComponent(txt);
+  }
+
+  var hoje = new Date(); hoje.setHours(12,0,0,0);
+  function pad(n){return String(n).padStart(2,"0")}
+  function iso(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}
+  var ult = new Date(hoje); ult.setDate(ult.getDate()-12);
+  $("troca-data").value = iso(ult); $("troca-data").max = iso(hoje);
+  var MESES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+  function fmt(d){return d.getDate()+" "+MESES[d.getMonth()]}
+  function icsDate(d){return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())}
+  function calc(){
+    var p = Math.max(1,Math.min(12,parseInt($("pessoas").value,10)||1));
+    var r = Math.max(1,Math.min(6,parseInt($("ref").value,10)||1));
+    var v = $("troca-data").value, q=$("quando"), ic=$("ics");
+    if(!v){q.textContent="--";$("detalhe").textContent="Informe a data da última troca.";ic.setAttribute("aria-disabled","true");return}
+    var p0 = v.split("-"), ini = new Date(+p0[0],+p0[1]-1,+p0[2],12);
+    var consumo = 0.05*p + 0.05*r;
+    var dias = Math.max(10,Math.min(150,Math.round(13/consumo)));
+    var fim = new Date(ini); fim.setDate(fim.getDate()+dias);
+    var restam = Math.round((fim-hoje)/86400000);
+    var lem = new Date(fim); lem.setDate(lem.getDate()-3);
+    var pct = Math.max(0,Math.min(100,Math.round((hoje-ini)/86400000/dias*100)));
+    var barra = $("barra"); barra.style.width = pct+"%";
+    q.textContent = fmt(fim);
+    var warn = restam<=5; q.classList.toggle("warn",warn); barra.classList.toggle("warn",warn);
+    $("detalhe").textContent = "Dura cerca de "+dias+" dias. " + (restam<0 ? "Pela conta, já passou da hora: confira se não está no fim." : restam===0 ? "É hoje. Melhor pedir agora." : "Faltam uns "+restam+" dias.");
+    var ev = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Chama Azul Demo//PT","BEGIN:VEVENT",
+      "UID:"+icsDate(lem)+"-gas@chamaazul.demo","DTSTAMP:"+icsDate(hoje)+"T120000Z",
+      "DTSTART;VALUE=DATE:"+icsDate(lem),
+      "SUMMARY:Pedir gás: o botijão deve acabar em 3 dias",
+      "DESCRIPTION:Estimativa da Chama Azul Gás & Água (demo). Fim previsto: "+fmt(fim)+".",
+      "BEGIN:VALARM","TRIGGER:PT9H","ACTION:DISPLAY","DESCRIPTION:Pedir gás","END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
+    ic.href = "data:text/calendar;charset=utf-8,"+encodeURIComponent(ev);
+    ic.removeAttribute("aria-disabled");
+  }
+  ["pessoas","ref","troca-data"].forEach(function(i){$(i).addEventListener("input",calc)});
+
+  function status(){
+    var n = new Date(), d = n.getDay(), h = n.getHours()+n.getMinutes()/60;
+    var ab = d===0 ? [8,20] : [7,22], on = h>=ab[0] && h<ab[1];
+    var s = $("status"); s.className = "status "+(on?"on":"off");
+    s.lastChild.textContent = on ? "Aberto até "+ab[1]+"h" : "Fechado agora";
+  }
+  render(); calc(); status();
+})();
+</script>
+</body>
+</html>

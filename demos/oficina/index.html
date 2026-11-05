@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carcará Auto Center | Oficina mecânica na Cidade dos Funcionários, Fortaleza</title>
+<meta name="description" content="Projeto conceito de landing page para oficina mecânica de bairro em Fortaleza, com orçamento estimado e status do carro. Feito por Rubens Dev.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23151514'/%3E%3Cpath d='M5 24 16 6l11 18h-5l-6-10-6 10z' fill='%23ffc400'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  --ink:#151514;
+  --graphite:#232321;
+  --graphite-2:#34342f;
+  --paper:#f0eee6;
+  --paper-2:#e2dfd3;
+  --yellow:#ffc400;
+  --yellow-deep:#e0a800;
+  --ok:#1f7a3a;
+  --bd:3px solid var(--ink);
+  --shadow:6px 6px 0 var(--ink);
+  --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --body:"Barlow",system-ui,sans-serif;
+  --mono:"Space Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.55 var(--body);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+[hidden]{display:none!important}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;margin:0;text-transform:uppercase;letter-spacing:.005em}
+h1{font-size:clamp(3.2rem,15vw,7rem)}
+h2{font-size:clamp(2.4rem,9vw,4rem)}
+h3{font-size:1.5rem}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left))}
+.sec{padding-block:56px}
+.tag{font:700 .8rem var(--mono);letter-spacing:.08em;text-transform:uppercase;display:inline-block;background:var(--ink);color:var(--yellow);padding:4px 10px;margin-bottom:14px}
+.lead{max-width:56ch;margin-top:14px;font-size:1.1rem}
+.mono{font-family:var(--mono)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:800 1.2rem var(--display);text-transform:uppercase;letter-spacing:.03em;padding:12px 22px;border:var(--bd);background:var(--yellow);color:var(--ink);text-decoration:none;box-shadow:var(--shadow);cursor:pointer;transition:transform .08s,box-shadow .08s;min-height:48px}
+.btn:hover{transform:translate(2px,2px);box-shadow:4px 4px 0 var(--ink)}
+.btn:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--ink)}
+.btn.dark{background:var(--ink);color:var(--yellow);border-color:var(--ink);box-shadow:6px 6px 0 var(--yellow)}
+.btn.dark:hover{box-shadow:4px 4px 0 var(--yellow)}
+.btn.alt{background:var(--paper);}
+:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
+.dk :focus-visible{outline-color:var(--yellow)}
+.hazard{height:18px;background:repeating-linear-gradient(-45deg,var(--yellow) 0 18px,var(--ink) 18px 36px)}
+
+/* faixa demo */
+.demo-bar{background:var(--ink);color:#d9d6c9;font:400 .8rem/1.3 var(--mono);text-align:center;padding:8px 12px}
+.demo-bar a{color:var(--yellow)}
+
+/* topo */
+header.top{background:var(--yellow);border-bottom:var(--bd);position:sticky;top:0;z-index:20}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.logo{font:800 1.6rem var(--display);text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:8px;letter-spacing:.01em}
+.logo svg{width:30px;height:30px}
+.logo small{font:400 .72rem var(--mono);display:none;text-transform:none}
+nav.menu{display:none;gap:22px;font:600 1.05rem var(--display);text-transform:uppercase;letter-spacing:.04em}
+nav.menu a{text-decoration:none}
+nav.menu a:hover{text-decoration:underline;text-decoration-thickness:3px}
+header.top .btn{padding:8px 14px;font-size:1.05rem;min-height:44px;box-shadow:3px 3px 0 var(--ink);background:var(--ink);color:var(--yellow)}
+
+/* hero */
+.hero{background:var(--graphite);color:var(--paper);border-bottom:var(--bd)}
+.hero .wrap{display:grid;gap:28px;padding-block:44px 52px}
+.hero h1 span{color:var(--yellow)}
+.hero .lead{color:#d9d6c9}
+.hero .actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:26px}
+.hero .btn.alt{box-shadow:6px 6px 0 var(--yellow)}
+.hero-photo{border:var(--bd);border-color:var(--yellow);box-shadow:8px 8px 0 var(--yellow);align-self:center}
+.hero-photo img{aspect-ratio:3/2;object-fit:cover;width:100%}
+.hero-photo figcaption{background:var(--yellow);color:var(--ink);font:700 .78rem var(--mono);padding:6px 10px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;font:400 .85rem var(--mono);color:#cfccbf;padding:0;list-style:none}
+.facts b{color:var(--yellow);font-weight:700}
+
+/* servicos */
+.serv-list{margin:30px 0 0;padding:0;list-style:none;border:var(--bd);background:#fff;box-shadow:var(--shadow)}
+.serv-list li{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;padding:16px;border-bottom:var(--bd)}
+.serv-list li:last-child{border-bottom:0}
+.serv-list .n{font:700 1rem var(--mono);background:var(--yellow);border:2px solid var(--ink);width:44px;height:44px;display:grid;place-items:center;grid-row:span 2}
+.serv-list h3{font-size:1.55rem;align-self:end}
+.serv-list p{color:#3b3b36;font-size:1rem}
+.serv-extra{display:grid;gap:22px;margin-top:34px}
+.serv-extra img{border:var(--bd);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
+.serv-extra p{max-width:52ch}
+.serv-extra .quote{font:800 1.7rem/1.05 var(--display);text-transform:uppercase}
+
+/* orcamento */
+.quote-sec{background:var(--yellow);border-block:var(--bd)}
+.panel{background:var(--paper);border:var(--bd);box-shadow:var(--shadow);padding:18px;margin-top:28px}
+fieldset{border:0;padding:0;margin:0 0 22px}
+legend{font:800 1.3rem var(--display);text-transform:uppercase;padding:0;margin-bottom:10px;letter-spacing:.02em}
+legend .mono{font-size:.75rem;font-weight:400;text-transform:none;letter-spacing:0;color:#555}
+.opts{display:grid;gap:10px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.opt span{display:flex;justify-content:space-between;align-items:center;gap:10px;border:var(--bd);background:#fff;padding:10px 14px;min-height:48px;font-weight:600}
+.opt span small{font:400 .78rem var(--mono);color:#555}
+.opt input:checked + span{background:var(--ink);color:var(--yellow)}
+.opt input:checked + span small{color:#e8e5d8}
+.opt input:focus-visible + span{outline:4px solid var(--yellow);outline-offset:2px;box-shadow:0 0 0 7px var(--ink)}
+.opt input[type=checkbox]:checked + span::after{content:"ok";font:700 .75rem var(--mono);background:var(--yellow);color:var(--ink);padding:2px 6px}
+.fields{display:grid;gap:12px}
+label.f{display:grid;gap:4px;font:600 .95rem var(--body)}
+.in{font:400 1.05rem var(--mono);padding:11px 12px;border:var(--bd);background:#fff;color:var(--ink);width:100%;min-height:48px;border-radius:0}
+.in::placeholder{color:#76766e}
+.result{margin-top:22px;background:var(--ink);color:var(--paper);border:var(--bd);padding:18px}
+.result .lbl{font:700 .78rem var(--mono);color:var(--yellow);letter-spacing:.06em;text-transform:uppercase}
+.price{font:700 clamp(1.6rem,7vw,2.6rem)/1.1 var(--mono);color:var(--yellow);margin:6px 0 10px;overflow-wrap:anywhere}
+.result ul{margin:0 0 12px;padding-left:18px;font-size:.95rem;color:#d9d6c9}
+.result .note{font-size:.9rem;color:#d9d6c9;margin-bottom:16px;border-left:4px solid var(--yellow);padding-left:10px}
+.result .empty{color:#d9d6c9}
+
+/* status */
+.status-sec{background:var(--graphite);color:var(--paper)}
+.status-sec .lead{color:#d9d6c9}
+.plate-form{display:grid;gap:12px;margin-top:28px;max-width:520px}
+.plate-row{display:flex;gap:12px;flex-wrap:wrap}
+.plate{display:flex;flex-direction:column;border:4px solid var(--ink);background:#fff;color:var(--ink);box-shadow:5px 5px 0 var(--yellow);flex:1 1 200px;min-width:0}
+.plate .band{background:#1d4fa8;color:#fff;font:700 .62rem var(--mono);text-align:center;padding:2px 0;letter-spacing:.12em}
+.plate input{font:700 2rem var(--mono);text-transform:uppercase;text-align:center;border:0;padding:6px;width:100%;min-width:0;background:#fff;color:var(--ink);letter-spacing:.08em;border-radius:0}
+.plate input:focus-visible{outline:4px solid var(--yellow);outline-offset:-2px}
+.plate-form .hint{font:400 .82rem var(--mono);color:#cfccbf}
+.err{color:#ffb4a8;font:700 .9rem var(--mono)}
+.sim{display:inline-block;margin-top:34px;font:700 .78rem var(--mono);background:var(--yellow);color:var(--ink);padding:3px 8px}
+.board{margin-top:10px;background:var(--paper);color:var(--ink);border:var(--bd);border-color:var(--yellow);box-shadow:8px 8px 0 var(--yellow);padding:18px}
+.board-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-bottom:var(--bd);padding-bottom:14px;margin-bottom:6px}
+.board-head .pl{font:700 1.7rem var(--mono);letter-spacing:.08em}
+.board-head .sv{font-size:.95rem;color:#3b3b36}
+.eta{text-align:right}
+.eta b{display:block;font:700 1.5rem var(--mono)}
+.eta span{font:400 .78rem var(--mono);text-transform:uppercase;color:#555}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:12px;padding:12px 0;border-bottom:2px dashed #b9b6a8;position:relative}
+.steps li:last-child{border-bottom:0}
+.steps .dot{width:30px;height:30px;border:3px solid var(--ink);background:#fff;display:grid;place-items:center;font:700 .8rem var(--mono)}
+.steps .nm{font:800 1.3rem var(--display);text-transform:uppercase}
+.steps .tm{font:400 .85rem var(--mono);color:#555}
+.steps li.done .dot{background:var(--ink);color:var(--yellow)}
+.steps li.now .dot{background:var(--yellow)}
+.steps li.now .nm{background:var(--yellow);padding:0 8px;margin-left:-8px;justify-self:start}
+.steps li.todo{opacity:.55}
+.steps li .st{grid-column:2/4;font-size:.92rem;color:#3b3b36;margin-top:-6px}
+.photo-box{margin-top:16px;display:grid;gap:12px;grid-template-columns:1fr;border:var(--bd);padding:12px;background:#fff}
+.photo-box svg{width:100%;height:auto;border:2px solid var(--ink);background:var(--paper-2)}
+.photo-box .h4{font:800 1.2rem var(--display);text-transform:uppercase;margin:0 0 4px;color:var(--ink)}
+.photo-box p{font-size:.95rem;color:#3b3b36}
+.board .btn{margin-top:16px}
+.fine{font:400 .8rem var(--mono);margin-top:12px;color:#555}
+
+/* revisao */
+.rev{margin-top:30px;max-width:640px;border:var(--bd);border-color:var(--yellow);padding:18px;box-shadow:6px 6px 0 var(--yellow)}
+.rev h3{color:var(--yellow);margin-bottom:6px}
+.rev .fields{margin-top:14px;grid-template-columns:1fr 1fr}
+.rev label.f{color:var(--paper)}
+.rev-out{margin-top:14px;font:400 .95rem/1.5 var(--mono);color:#e8e5d8}
+.rev-out b{color:var(--yellow)}
+
+/* garantia */
+.how{display:grid;gap:0;margin-top:30px;border:var(--bd);box-shadow:var(--shadow);background:#fff;counter-reset:s}
+.how div{padding:18px 16px 18px 70px;border-bottom:var(--bd);position:relative;counter-increment:s}
+.how div:last-child{border-bottom:0}
+.how div::before{content:counter(s);position:absolute;left:14px;top:14px;font:700 1.5rem var(--mono);width:42px;height:42px;display:grid;place-items:center;background:var(--yellow);border:3px solid var(--ink)}
+.how p{color:#3b3b36;margin-top:4px}
+.warranty{margin-top:30px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;background:var(--ink);color:var(--paper);padding:20px;border:var(--bd);box-shadow:6px 6px 0 var(--yellow)}
+.warranty .big{font:800 clamp(3.4rem,16vw,5.5rem)/.85 var(--display);color:var(--yellow)}
+.warranty p{flex:1 1 240px}
+
+/* onde */
+.where{background:var(--paper-2);border-top:var(--bd)}
+.where .wrap{display:grid;gap:28px}
+.hours{width:100%;border-collapse:collapse;border:var(--bd);background:#fff;margin-top:14px}
+.hours td{padding:10px 14px;border-bottom:2px solid var(--ink)}
+.hours tr:last-child td{border-bottom:0}
+.hours td:last-child{font:700 .95rem var(--mono);text-align:right}
+.addr{font-size:1.15rem;font-style:normal;margin-top:14px}
+.map{border:var(--bd);box-shadow:var(--shadow);background:#fff;padding:0}
+.map svg{display:block;width:100%;height:auto}
+
+/* rodape */
+footer{background:var(--ink);color:#cfccbf;padding:34px 0 28px;font-size:.92rem}
+footer .wrap{display:grid;gap:14px}
+footer .logo{color:var(--yellow)}
+footer a{color:var(--yellow)}
+footer .mono{font-size:.8rem}
+
+@media (min-width:640px){
+  .opts.cols{grid-template-columns:repeat(3,1fr)}
+  .opts.two{grid-template-columns:repeat(2,1fr)}
+  .fields.g3{grid-template-columns:2fr 1fr 1fr}
+  .photo-box{grid-template-columns:200px 1fr;align-items:center}
+  .logo small{display:inline}
+}
+@media (min-width:860px){
+  nav.menu{display:flex}
+  .sec{padding-block:84px}
+  .hero .wrap{grid-template-columns:1.1fr .9fr;gap:48px;padding-block:72px 80px}
+  .serv-list{display:grid;grid-template-columns:1fr 1fr}
+  .serv-list li{border-bottom:var(--bd)}
+  .serv-list li:nth-child(odd){border-right:var(--bd)}
+  .serv-list li:nth-last-child(-n+2){border-bottom:0}
+  .serv-extra{grid-template-columns:1fr 1fr;align-items:center;gap:44px}
+  .panel{padding:30px}
+  .where .wrap{grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  footer .wrap{grid-template-columns:1fr auto;align-items:end}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Demo criada por Rubens Dev — <a href="https://rubensdev.com.br/">quer um site assim?</a></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#topo" aria-label="Carcará Auto Center, início">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#151514"/><path d="M5 24 16 6l11 18h-5l-6-10-6 10z" fill="#ffc400"/></svg>
+      Carcará <small>auto center</small>
+    </a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#servicos">Serviços</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#status">Status do carro</a>
+      <a href="#garantia">Garantia</a>
+      <a href="#onde">Onde estamos</a>
+    </nav>
+    <a class="btn" id="wa-top" href="#" data-wa="Oi! Vim pelo site e queria falar com a oficina.">WhatsApp</a>
+  </div>
+</header>
+
+<main id="topo">
+<section class="hero dk">
+  <div class="wrap">
+    <div>
+      <p class="tag">Cidade dos Funcionários · Fortaleza</p>
+      <h1>Oficina que mostra a <span>peça trocada.</span></h1>
+      <p class="lead">Mecânica geral, sem surpresa na conta. Você recebe foto e vídeo do que foi feito no seu carro, direto no WhatsApp, e só mexemos no que você aprovar.</p>
+      <div class="actions">
+        <a class="btn" href="#orcamento">Calcular orçamento</a>
+        <a class="btn alt" href="#status">Ver status de um carro</a>
+      </div>
+      <ul class="facts">
+        <li><b>90 dias</b> de garantia</li>
+        <li><b>Seg a sáb</b> 7h30</li>
+        <li><b>+15 anos</b> de bancada</li>
+      </ul>
+    </div>
+    <figure class="hero-photo" style="margin:0">
+      <img src="img/maos.webp" width="1024" height="682" alt="Mãos de mecânico com luvas usando chave de boca em cabeçotes de um motor amarelo">
+      <figcaption>Serviço feito à vista, sem pressa.</figcaption>
+    </figure>
+  </div>
+</section>
+<div class="hazard" aria-hidden="true"></div>
+
+<section class="sec" id="servicos">
+  <div class="wrap">
+    <p class="tag">O que fazemos</p>
+    <h2>Serviços de bancada</h2>
+    <p class="lead">Do óleo à injeção. Se a gente não resolve aqui, diz na hora e indica quem resolve.</p>
+    <ol class="serv-list">
+      <li><span class="n">01</span><h3>Revisão</h3><p>Checklist de 30 itens, óleo, filtros e relatório com foto.</p></li>
+      <li><span class="n">02</span><h3>Óleo e filtros</h3><p>Óleo certo para o seu motor, filtro novo, sem enrolação.</p></li>
+      <li><span class="n">03</span><h3>Freios</h3><p>Pastilhas, discos, fluido e sangria. Teste de rua depois.</p></li>
+      <li><span class="n">04</span><h3>Suspensão</h3><p>Amortecedor, bucha, pivô, barra. Barulho em lombada e buraco.</p></li>
+      <li><span class="n">05</span><h3>Alinhamento e balanceamento</h3><p>Carro puxando para o lado ou volante tremendo.</p></li>
+      <li><span class="n">06</span><h3>Ar-condicionado</h3><p>Higienização, carga de gás e troca do filtro de cabine.</p></li>
+      <li><span class="n">07</span><h3>Injeção e scanner</h3><p>Luz da injeção acesa? Lemos o código e explicamos o defeito.</p></li>
+      <li><span class="n">08</span><h3>Bateria</h3><p>Teste de carga grátis. Troca na hora, se precisar.</p></li>
+    </ol>
+    <div class="serv-extra">
+      <img src="img/motor.webp" width="900" height="675" loading="lazy" alt="Cofre de motor aberto de um carro antigo, com filtro de ar, reservatórios e mangueiras à mostra">
+      <div>
+        <p class="quote">Carro velho também tem conserto.</p>
+        <p style="margin-top:12px">Atendemos popular, sedã, SUV e pickup, de carro com 5 anos a carro com 25. Peça original ou paralela de boa marca, você escolhe com o preço na mesa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec quote-sec" id="orcamento">
+  <div class="wrap">
+    <p class="tag">Quanto mais ou menos custa</p>
+    <h2>Orçamento estimado</h2>
+    <p class="lead">Escolha o tipo de carro e os serviços. A faixa é uma estimativa de mão de obra e peças comuns. O valor final sai depois que o mecânico olha o carro.</p>
+
+    <form class="panel" id="qform" onsubmit="return false" novalidate>
+      <fieldset>
+        <legend>1. Seu carro</legend>
+        <div class="opts cols">
+          <label class="opt"><input type="radio" name="car" value="0" checked><span>Popular <small>Mobi, Kwid, Gol</small></span></label>
+          <label class="opt"><input type="radio" name="car" value="1"><span>Sedã / hatch médio <small>Onix, HB20, Corolla</small></span></label>
+          <label class="opt"><input type="radio" name="car" value="2"><span>SUV / pickup <small>Creta, Hilux, S10</small></span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>2. Serviços <span class="mono">(marque quantos quiser)</span></legend>
+        <div class="opts two" id="svcs"></div>
+      </fieldset>
+      <fieldset>
+        <legend>3. Dados para o WhatsApp <span class="mono">(opcional)</span></legend>
+        <div class="fields g3">
+          <label class="f">Modelo <input class="in" id="q-modelo" type="text" placeholder="Ex.: Onix LT" autocomplete="off"></label>
+          <label class="f">Ano <input class="in" id="q-ano" type="text" inputmode="numeric" maxlength="4" placeholder="2019" autocomplete="off"></label>
+          <label class="f">Placa <input class="in" id="q-placa" type="text" maxlength="7" placeholder="ABC1D23" autocomplete="off" style="text-transform:uppercase"></label>
+        </div>
+      </fieldset>
+
+      <div class="result" aria-live="polite">
+        <div id="q-empty" class="empty">Marque pelo menos um serviço para ver a faixa de preço.</div>
+        <div id="q-out" hidden>
+          <div class="lbl">Estimativa, de/até</div>
+          <div class="price" id="q-price"></div>
+          <ul id="q-list"></ul>
+          <p class="note">Estimativa de referência para Fortaleza. Pode mudar depois da avaliação do carro, e nada é feito sem a sua aprovação.</p>
+          <a class="btn" id="q-wa" href="#">Mandar no WhatsApp</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="sec status-sec dk" id="status">
+  <div class="wrap">
+    <p class="tag">Sem ficar ligando</p>
+    <h2>Status do seu carro</h2>
+    <p class="lead">Na oficina de verdade, você recebe esse painel no WhatsApp. Digite uma placa no padrão Mercosul para ver como fica.</p>
+
+    <form class="plate-form" id="pform" onsubmit="return false" novalidate>
+      <label for="plate-in" class="mono" style="font-size:.85rem;color:#cfccbf">Placa (formato ABC1D23)</label>
+      <div class="plate-row">
+        <div class="plate"><div class="band">BRASIL</div><input id="plate-in" type="text" maxlength="7" placeholder="ABC1D23" autocomplete="off" aria-describedby="plate-hint plate-err"></div>
+        <button class="btn" type="submit" id="plate-go">Ver status</button>
+      </div>
+      <p class="hint" id="plate-hint">Qualquer placa vale. O resultado é inventado pela própria placa.</p>
+      <p class="err" id="plate-err" role="alert" hidden></p>
+    </form>
+
+    <div id="board-wrap" hidden>
+      <span class="sim">SIMULAÇÃO · dados fictícios</span>
+      <div class="board" id="board"></div>
+    </div>
+
+    <div class="rev">
+      <h3>Lembrete de revisão</h3>
+      <p>Revisão boa é a que sai antes do problema. Veja quando passar aqui de novo.</p>
+      <div class="fields">
+        <label class="f">Km atual <input class="in" id="km-now" type="text" inputmode="numeric" placeholder="62000" autocomplete="off"></label>
+        <label class="f">Km por mês <input class="in" id="km-mes" type="text" inputmode="numeric" placeholder="1000" autocomplete="off"></label>
+      </div>
+      <p class="rev-out" id="rev-out" aria-live="polite">Preencha os dois campos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="garantia">
+  <div class="wrap">
+    <p class="tag">Como trabalhamos</p>
+    <h2>Aprovou, a gente mexe</h2>
+    <div class="how">
+      <div><h3>Diagnóstico com foto</h3><p>O mecânico olha o carro e manda no WhatsApp a foto do que está errado, com o preço de cada item.</p></div>
+      <div><h3>Você aprova ou não</h3><p>Só o que você responder “pode fazer” entra no serviço. Sem acréscimo no balcão.</p></div>
+      <div><h3>Acompanhe pelo celular</h3><p>Foto e vídeo da peça trocada e o aviso quando o carro estiver pronto. Você leva a peça velha se quiser.</p></div>
+    </div>
+    <div class="warranty">
+      <div class="big mono" style="font-family:var(--display)">90 dias</div>
+      <p>Garantia por escrito em peça e mão de obra, com a nota. Se voltar com o mesmo defeito, a gente refaz sem cobrar o serviço.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec where" id="onde">
+  <div class="wrap">
+    <div>
+      <p class="tag">Onde estamos</p>
+      <h2>Cidade dos Funcionários</h2>
+      <address class="addr">Rua Vereador Almir Sá, 312<br>Cidade dos Funcionários · Fortaleza-CE<br><span class="mono" style="font-size:.9rem">@carcara.autocenter</span></address>
+      <table class="hours">
+        <caption class="mono" style="text-align:left;font-size:.8rem;padding-top:4px;caption-side:top">Horário de atendimento</caption>
+        <tbody>
+          <tr><td>Segunda a sexta</td><td>7h30 – 17h30</td></tr>
+          <tr><td>Sábado</td><td>7h30 – 12h</td></tr>
+          <tr><td>Domingo e feriado</td><td>fechado</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:22px"><a class="btn dark" id="wa-onde" href="#" data-wa="Oi! Queria agendar uma avaliação do meu carro.">Agendar pelo WhatsApp</a></p>
+    </div>
+    <div class="map" role="img" aria-label="Desenho esquemático: oficina na esquina de duas ruas, com vaga para quatro carros em frente (não é um mapa real)">
+      <svg viewBox="0 0 400 300" width="400" height="300" aria-hidden="true">
+        <rect width="400" height="300" fill="#f0eee6"/>
+        <rect y="120" width="400" height="60" fill="#34342f"/>
+        <rect x="170" width="60" height="300" fill="#34342f"/>
+        <path d="M0 150h400M200 0v300" stroke="#ffc400" stroke-width="3" stroke-dasharray="14 10"/>
+        <rect x="236" y="186" width="130" height="90" fill="#ffc400" stroke="#151514" stroke-width="4"/>
+        <path d="M250 262v-40h30v40M300 262v-40h50v40" fill="#151514"/>
+        <text x="301" y="208" font-family="Space Mono,monospace" font-weight="700" font-size="14" text-anchor="middle" fill="#151514">CARCARÁ</text>
+        <rect x="20" y="20" width="130" height="80" fill="#e2dfd3" stroke="#151514" stroke-width="3"/>
+        <rect x="250" y="20" width="130" height="80" fill="#e2dfd3" stroke="#151514" stroke-width="3"/>
+        <rect x="20" y="200" width="130" height="80" fill="#e2dfd3" stroke="#151514" stroke-width="3"/>
+        <text x="30" y="290" font-family="Space Mono,monospace" font-size="11" fill="#151514">Rua Vereador Almir Sá</text>
+      </svg>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#topo">Carcará Auto Center</a>
+      <p style="margin-top:8px">Rua Vereador Almir Sá, 312 · Cidade dos Funcionários · Fortaleza-CE</p>
+      <p class="mono" style="margin-top:8px">Fotos: domínio público (CC0/PDM) via Openverse.</p>
+    </div>
+    <p class="mono">Projeto conceito, negócio fictício.<br>Demo criada por <a href="https://rubensdev.com.br/">Rubens Dev</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var WA = 'https://wa.me/5585985366270?text=';
+  var NOME = '[Demo Carcará Auto Center] ';
+  function wa(msg){ return WA + encodeURIComponent(NOME + msg); }
+  function $(id){ return document.getElementById(id); }
+  var brl = function(n){ return 'R$ ' + n.toLocaleString('pt-BR'); };
+
+  document.querySelectorAll('[data-wa]').forEach(function(a){ a.href = wa(a.getAttribute('data-wa')); });
+
+  /* ---------- Orçamento ---------- */
+  var SV = [
+    { id:'rev',  nome:'Revisão completa',        min:380, max:620 },
+    { id:'oleo', nome:'Óleo e filtros',          min:160, max:280 },
+    { id:'fre',  nome:'Freios (eixo dianteiro)', min:220, max:420 },
+    { id:'sus',  nome:'Suspensão (par)',         min:450, max:980 },
+    { id:'ali',  nome:'Alinhamento e balanceamento', min:120, max:190 },
+    { id:'ar',   nome:'Ar-condicionado',         min:250, max:480 },
+    { id:'inj',  nome:'Injeção e scanner',       min:120, max:360 },
+    { id:'bat',  nome:'Bateria (com a bateria)', min:380, max:640 }
+  ];
+  var MULT = [1, 1.25, 1.6];
+  var CARS = ['Popular', 'Sedã/hatch médio', 'SUV/pickup'];
+  var svWrap = $('svcs');
+  SV.forEach(function(s){
+    var l = document.createElement('label'); l.className = 'opt';
+    l.innerHTML = '<input type="checkbox" value="' + s.id + '"><span>' + s.nome + '<small>' + s.min + '–' + s.max + '</small></span>';
+    svWrap.appendChild(l);
+  });
+  var qa = null;
+  function round10(n){ return Math.round(n / 10) * 10; }
+  function calcQuote(){
+    var car = +document.querySelector('input[name=car]:checked').value;
+    var sel = SV.filter(function(s){ return svWrap.querySelector('input[value=' + s.id + ']').checked; });
+    if(!sel.length){ $('q-empty').hidden = false; $('q-out').hidden = true; return; }
+    var lo = 0, hi = 0;
+    sel.forEach(function(s){ lo += s.min; hi += s.max; });
+    // desconto de mão de obra quando junta serviços
+    var disc = sel.length > 1 ? 0.95 : 1;
+    lo = round10(lo * MULT[car] * disc); hi = round10(hi * MULT[car] * disc);
+    $('q-empty').hidden = true; $('q-out').hidden = false;
+    $('q-price').textContent = brl(lo) + ' a ' + brl(hi);
+    $('q-list').innerHTML = '<li>' + CARS[car] + '</li>' + sel.map(function(s){ return '<li>' + s.nome + '</li>'; }).join('');
+    var modelo = $('q-modelo').value.trim(), ano = $('q-ano').value.trim(), placa = $('q-placa').value.trim().toUpperCase();
+    var msg = 'Oi! Quero um orçamento.\nCarro: ' + CARS[car] + (modelo ? ' - ' + modelo : '') + (ano ? ' ' + ano : '') + (placa ? '\nPlaca: ' + placa : '') +
+      '\nServiços: ' + sel.map(function(s){ return s.nome; }).join(', ') +
+      '\nEstimativa do site: ' + brl(lo) + ' a ' + brl(hi) + ' (sujeita a avaliação).';
+    $('q-wa').href = wa(msg);
+  }
+  $('qform').addEventListener('input', calcQuote);
+  $('qform').addEventListener('change', calcQuote);
+  $('q-placa').addEventListener('input', function(){ this.value = this.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); });
+  calcQuote();
+
+  /* ---------- Status por placa ---------- */
+  var PLATE = /^[A-Z]{3}[0-9][A-Z][0-9]{2}$/;
+  var STAGES = [
+    ['Recebido', 'Carro entrou na oficina e foi vistoriado na entrada.'],
+    ['Diagnóstico', 'Mecânico testando e fotografando o que precisa de conserto.'],
+    ['Aguardando aprovação', 'Orçamento enviado no WhatsApp. Esperando o seu “pode fazer”.'],
+    ['Em serviço', 'Peça sendo trocada. Foto da peça nova a caminho.'],
+    ['Pronto', 'Carro lavado e liberado. Pode vir buscar.']
+  ];
+  var JOBS = [
+    { s:'Troca de pastilhas de freio', p:'pastilha', t:'Pastilha de freio dianteira' },
+    { s:'Troca de óleo e filtros', p:'filtro', t:'Filtro de óleo' },
+    { s:'Troca de amortecedor', p:'amort', t:'Amortecedor dianteiro' }
+  ];
+  function hash(str){ var h = 2166136261; for(var i=0;i<str.length;i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+  function hm(min){ var h = Math.floor(min / 60) % 24, m = min % 60; return (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m; }
+  function partSvg(kind){
+    var o = '<svg viewBox="0 0 240 150" role="img" aria-label="Ilustração da peça trocada (exemplo)">';
+    o += '<rect width="240" height="150" fill="#e2dfd3"/><path d="M0 120h240" stroke="#151514" stroke-width="3"/>';
+    if(kind === 'pastilha'){
+      o += '<path d="M40 100c0-35 30-60 80-60s80 25 80 60z" fill="#6b6b64" stroke="#151514" stroke-width="4"/>';
+      o += '<path d="M54 100c0-26 24-44 66-44s66 18 66 44z" fill="#ffc400" stroke="#151514" stroke-width="3"/>';
+      o += '<path d="M90 100V76M120 100V70M150 100V76" stroke="#151514" stroke-width="3"/>';
+    } else if(kind === 'filtro'){
+      o += '<rect x="82" y="30" width="76" height="86" fill="#ffc400" stroke="#151514" stroke-width="4"/>';
+      o += '<rect x="76" y="22" width="88" height="14" fill="#151514"/><rect x="76" y="110" width="88" height="10" fill="#151514"/>';
+      o += '<path d="M96 44v60M112 44v60M128 44v60M144 44v60" stroke="#151514" stroke-width="3"/>';
+    } else {
+      o += '<rect x="112" y="14" width="16" height="30" fill="#151514"/><rect x="104" y="44" width="32" height="64" fill="#6b6b64" stroke="#151514" stroke-width="4"/>';
+      o += '<path d="M92 112h56M96 120h48" stroke="#151514" stroke-width="4"/>';
+      o += '<path d="M80 56q40 10 80 0M80 70q40 10 80 0M80 84q40 10 80 0M80 98q40 10 80 0" fill="none" stroke="#ffc400" stroke-width="5"/>';
+    }
+    return o + '</svg>';
+  }
+  function showStatus(plate){
+    var h = hash(plate);
+    var stage = h % 5;
+    var job = JOBS[(h >>> 3) % JOBS.length];
+    var t0 = 7 * 60 + 40 + ((h >>> 5) % 50);
+    var times = [t0, t0 + 35 + ((h >>> 7) % 20), t0 + 95 + ((h >>> 9) % 30), t0 + 150 + ((h >>> 11) % 30), t0 + 230 + ((h >>> 13) % 40)];
+    var prev = times[4]; if(prev > 17 * 60 + 30) prev = 17 * 60;
+    var lis = STAGES.map(function(s, i){
+      var cls = i < stage ? 'done' : (i === stage ? 'now' : 'todo');
+      var tm = i <= stage ? hm(times[i]) : '--:--';
+      return '<li class="' + cls + '"><span class="dot" aria-hidden="true">' + (i < stage ? '✓' : (i + 1)) + '</span><span class="nm">' + s[0] + '</span><span class="tm">' + tm + '</span>' +
+        (i === stage ? '<span class="st">' + s[1] + '</span>' : '') + '</li>';
+    }).join('');
+    var etaLbl = stage === 4 ? 'Pronto desde' : 'Previsão de entrega';
+    var etaVal = stage === 4 ? hm(times[4]) : 'hoje ' + hm(prev);
+    var photo = stage >= 3
+      ? '<div class="photo-box">' + partSvg(job.p) + '<div><p class="h4">Foto da peça trocada</p><p>' + job.t + '. Na oficina de verdade, aqui vai a foto real do seu carro, antes e depois.</p></div></div>'
+      : '<div class="photo-box"><div><p class="h4">Foto da peça trocada</p><p>Aparece aqui quando o serviço começar.</p></div></div>';
+    var msg = 'Oi! Queria saber do carro placa ' + plate + ' (' + job.s + ').';
+    $('board').innerHTML =
+      '<div class="board-head"><div><div class="pl">' + plate.slice(0,3) + '-' + plate.slice(3) + '</div><div class="sv">' + job.s + '</div></div>' +
+      '<div class="eta"><span>' + etaLbl + '</span><b>' + etaVal + '</b></div></div>' +
+      '<ol class="steps">' + lis + '</ol>' + photo +
+      '<a class="btn" href="' + wa(msg) + '">Falar com a oficina</a>' +
+      '<p class="fine">Simulação feita com a placa digitada. Nenhum dado é enviado ou guardado.</p>';
+    $('board-wrap').hidden = false;
+  }
+  var pin = $('plate-in'), perr = $('plate-err');
+  pin.addEventListener('input', function(){ this.value = this.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); });
+  $('pform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = pin.value.trim().toUpperCase();
+    if(!PLATE.test(v)){
+      perr.textContent = /^[A-Z]{3}[0-9]{4}$/.test(v) ? 'Essa é placa antiga. Digite no padrão Mercosul: 3 letras, 1 número, 1 letra, 2 números (ABC1D23).' : 'Placa inválida. Use o padrão Mercosul: ABC1D23.';
+      perr.hidden = false; $('board-wrap').hidden = true; pin.setAttribute('aria-invalid', 'true'); return;
+    }
+    perr.hidden = true; pin.removeAttribute('aria-invalid');
+    showStatus(v);
+  });
+
+  /* ---------- Lembrete de revisão ---------- */
+  function revisao(){
+    var km = parseInt($('km-now').value.replace(/\D/g, ''), 10), mes = parseInt($('km-mes').value.replace(/\D/g, ''), 10);
+    var out = $('rev-out');
+    if(!km || !mes){ out.textContent = 'Preencha os dois campos.'; return; }
+    var prox = (Math.floor(km / 10000) + 1) * 10000;
+    var falta = prox - km;
+    var meses = Math.max(0, Math.round(falta / mes));
+    var d = new Date(); d.setMonth(d.getMonth() + meses);
+    var quando = d.toLocaleDateString('pt-BR', { month:'long', year:'numeric' });
+    out.innerHTML = 'Próxima revisão aos <b>' + prox.toLocaleString('pt-BR') + ' km</b>. Faltam ' + falta.toLocaleString('pt-BR') + ' km, uns <b>' + meses + (meses === 1 ? ' mês' : ' meses') + '</b> (' + quando + '). Passe antes se o carro rodar mais.';
+  }
+  $('km-now').addEventListener('input', revisao);
+  $('km-mes').addEventListener('input', revisao);
+})();
+</script>
+</body>
+</html>

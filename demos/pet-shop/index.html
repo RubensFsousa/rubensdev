@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Patas do Mucuripe | Banho, tosa e leva e traz em Fortaleza</title>
+<meta name="description" content="Projeto conceito de landing page para pet shop com banho, tosa e leva e traz em Fortaleza. Demo criada por Rubens Dev.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23c8442a'/%3E%3Cellipse cx='16' cy='21' rx='6.5' ry='5.2' fill='%23fff'/%3E%3Ccircle cx='8.5' cy='14' r='2.6' fill='%23fff'/%3E%3Ccircle cx='13' cy='9.5' r='2.6' fill='%23fff'/%3E%3Ccircle cx='19' cy='9.5' r='2.6' fill='%23fff'/%3E%3Ccircle cx='23.5' cy='14' r='2.6' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root {
+  --sand: #f7ecdb;
+  --sand-deep: #efdcc0;
+  --paper: #fffaf1;
+  --coral: #c8442a;
+  --coral-soft: #f6c7b8;
+  --sea: #1d5c57;
+  --sea-soft: #cfe9e2;
+  --ink: #3a2a22;
+  --ink-soft: #6a5548;
+  --line: rgba(58,42,34,.18);
+  --display: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Nunito", system-ui, sans-serif;
+  --r: 22px;
+  --gap: 24px;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --sand: #231a15; --sand-deep: #2d2119; --paper: #2a1f19; --coral: #ee7d62; --coral-soft: #4b2a20;
+  --sea: #8fd4c7; --sea-soft: #1c3a36; --ink: #f6eadb; --ink-soft: #cdb9a7; --line: rgba(246,234,219,.2);
+  color-scheme: dark } }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--sand); color: var(--ink); font: 400 1.0625rem/1.6 var(--body); overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+.inner { max-width: 1080px; margin: 0 auto; padding-inline: max(18px, env(safe-area-inset-left, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.1; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.3rem, 8vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 5vw, 2.7rem); }
+h3 { font-size: 1.3rem; }
+p { margin: 0; }
+section { padding-block: 64px; }
+.eyebrow { font: 700 .85rem var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--coral); margin-bottom: 10px; }
+.lead { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 700 1rem var(--body); padding: 14px 26px; min-height: 48px; border-radius: 999px; text-decoration: none; border: 0; cursor: pointer; background: var(--coral); color: #fff; text-align: center; }
+:root .btn { --btn-fg: #fff; }
+@media (prefers-color-scheme: dark) { .btn { color: #2a120b; } }
+.btn:hover { filter: brightness(1.08); }
+.btn.alt { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+:focus-visible { outline: 3px solid var(--sea); outline-offset: 3px; }
+
+/* faixa demo */
+.demo-bar { background: var(--ink); color: var(--sand); font-size: .85rem; text-align: center; padding: 8px 14px; }
+.demo-bar a { font-weight: 700; }
+
+/* topo */
+header.top .inner { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-block: 16px; }
+.logo { display: flex; align-items: center; gap: 10px; font: 600 1.3rem var(--display); text-decoration: none; }
+.logo svg { width: 34px; height: 34px; }
+nav { display: none; gap: 22px; font-weight: 600; }
+nav a { text-decoration: none; }
+nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 820px) { nav { display: flex; } }
+header .btn { padding: 10px 20px; min-height: 44px; }
+
+/* hero */
+.hero { padding-top: 24px; padding-bottom: 72px; }
+.hero .inner { display: grid; gap: 36px; align-items: center; }
+.hero h1 span { color: var(--coral); }
+.hero .lead { margin-top: 18px; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.blob { border-radius: 58% 42% 55% 45% / 48% 56% 44% 52%; overflow: hidden; background: var(--sea-soft); }
+.blob img { width: 100%; height: 100%; object-fit: cover; }
+.hero .blob { aspect-ratio: 1 / 1; max-width: 460px; justify-self: center; width: 100%; }
+.hero-facts { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 26px; padding: 0; list-style: none; font-weight: 600; font-size: .95rem; color: var(--ink-soft); }
+.hero-facts li::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--sea); margin-right: 8px; }
+@media (min-width: 820px) { .hero .inner { grid-template-columns: 1.1fr .9fr; } }
+
+.wave { display: block; width: 100%; height: 46px; }
+.wave path { fill: var(--paper); }
+.wave.to-sand path { fill: var(--sand); }
+
+/* servicos */
+.band-paper { background: var(--paper); }
+.sec-head { margin-bottom: 32px; }
+.sec-head .lead { margin-top: 12px; }
+.services { display: grid; gap: 28px; }
+.svc-list { list-style: none; margin: 0; padding: 0; }
+.svc-list li { display: flex; gap: 16px; padding: 16px 0; border-bottom: 2px dotted var(--line); }
+.svc-list li:first-child { border-top: 2px dotted var(--line); }
+.svc-list b { font: 600 1.15rem var(--display); display: block; }
+.svc-list span { color: var(--ink-soft); }
+.svc-list .price { margin-left: auto; white-space: nowrap; font: 600 1rem var(--display); color: var(--coral); align-self: flex-start; }
+.svc-photos { display: grid; gap: 16px; }
+.svc-photos .blob { border-radius: 40px 90px 40px 90px / 40px 70px 40px 70px; }
+.svc-photos figure { margin: 0; }
+.svc-photos figcaption { font-size: .9rem; color: var(--ink-soft); margin-top: 8px; }
+@media (min-width: 820px) { .services { grid-template-columns: 1.1fr .9fr; gap: 56px; } }
+
+/* calculadora */
+.calc { display: grid; gap: 28px; }
+.calc form { display: grid; gap: 22px; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+legend { font: 600 1.1rem var(--display); margin-bottom: 10px; padding: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { position: relative; }
+.chip input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.chip span { display: flex; align-items: center; min-height: 46px; padding: 8px 18px; border-radius: 999px; background: var(--paper); box-shadow: inset 0 0 0 2px var(--line); font-weight: 700; font-size: .98rem; }
+.chip small { font-weight: 600; color: var(--ink-soft); margin-left: 6px; font-size: .8rem; }
+.chip input:checked + span { background: var(--sea); color: var(--paper); box-shadow: none; }
+.chip input:checked + span small { color: inherit; opacity: .85; }
+.chip input:focus-visible + span { outline: 3px solid var(--coral); outline-offset: 2px; }
+.chip input:disabled + span { opacity: .4; text-decoration: line-through; }
+.chip input:disabled { cursor: not-allowed; }
+@media (prefers-color-scheme: dark) { .chip input:checked + span { color: #0f2a26; } }
+select { font: 600 1rem var(--body); padding: 12px 14px; border-radius: 14px; border: 2px solid var(--line); background: var(--paper); color: var(--ink); width: 100%; max-width: 360px; min-height: 48px; }
+.result { background: var(--sea); color: #fff; border-radius: var(--r) var(--r) 90px var(--r); padding: 28px 24px 34px; align-self: start; }
+@media (prefers-color-scheme: dark) { .result { background: var(--sea-soft); color: var(--ink); } }
+.result h3 { font-size: 1.1rem; opacity: .9; }
+.total { font: 600 clamp(3rem, 12vw, 4.4rem)/1 var(--display); margin: 8px 0 4px; }
+.result .note { font-size: .9rem; opacity: .9; }
+.lines { list-style: none; margin: 18px 0 22px; padding: 0; font-size: .98rem; }
+.lines li { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px dotted rgba(255,255,255,.4); }
+@media (prefers-color-scheme: dark) { .lines li { border-color: var(--line); } }
+.result .btn { width: 100%; background: var(--paper); color: var(--ink); }
+.result .btn:hover { filter: none; background: #fff; color: #3a2a22; }
+@media (min-width: 900px) { .calc { grid-template-columns: 1.2fr .8fr; gap: 48px; } .result { position: sticky; top: 20px; } }
+
+/* acompanhe */
+.track { display: grid; gap: 36px; }
+.sim-tag { display: inline-block; background: var(--coral-soft); color: var(--ink); font-weight: 700; font-size: .82rem; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; }
+.steps { list-style: none; margin: 0; padding: 0; position: relative; }
+.steps li { position: relative; padding: 0 0 22px 52px; min-height: 52px; color: var(--ink-soft); font-weight: 600; }
+.steps li::before { content: ""; position: absolute; left: 17px; top: 34px; bottom: 0; width: 3px; background: var(--line); }
+.steps li:last-child::before { display: none; }
+.steps li::after { content: attr(data-n); position: absolute; left: 0; top: 0; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font: 600 1rem var(--display); background: var(--paper); box-shadow: inset 0 0 0 2px var(--line); transition: background .3s, color .3s; }
+.steps li.done::after { background: var(--sea); color: var(--paper); box-shadow: none; content: "\2713"; }
+.steps li.now::after { background: var(--coral); color: #fff; box-shadow: none; }
+@media (prefers-color-scheme: dark) { .steps li.done::after { color: #0f2a26; } .steps li.now::after { color: #2a120b; } }
+.steps li.done::before { background: var(--sea); }
+.steps li.now, .steps li.done { color: var(--ink); }
+.steps small { display: block; font-weight: 400; }
+.phone { background: var(--paper); border-radius: 36px; padding: 18px; max-width: 360px; box-shadow: 0 0 0 2px var(--line); width: 100%; justify-self: center; }
+.phone .hd { display: flex; justify-content: space-between; font-size: .8rem; color: var(--ink-soft); font-weight: 700; margin-bottom: 12px; }
+.notif { background: var(--sand); border-radius: 22px; overflow: hidden; }
+.notif .pic { aspect-ratio: 4 / 3; background: var(--sea-soft); overflow: hidden; }
+.notif .pic img { width: 100%; height: 100%; object-fit: cover; }
+.notif .msg { padding: 14px 16px 16px; }
+.notif .msg b { font: 600 1.05rem var(--display); display: block; margin-bottom: 2px; }
+.phone .sim-foot { font-size: .8rem; color: var(--ink-soft); margin-top: 12px; text-align: center; }
+.track .btn { margin-top: 10px; }
+@media (min-width: 820px) { .track { grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; } }
+
+/* pacote */
+.pack { background: var(--coral-soft); border-radius: 56px 56px 56px 120px; padding: 36px 24px; display: grid; gap: 28px; }
+@media (min-width: 700px) { .pack { padding: 52px 52px; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 44px; } }
+.pack h2 { margin-bottom: 14px; }
+.pack ul { margin: 16px 0 0; padding-left: 20px; }
+.pack li { margin-bottom: 6px; }
+.pack-box { background: var(--paper); border-radius: var(--r); padding: 22px; }
+.pack-box .lbl { font-size: .9rem; color: var(--ink-soft); font-weight: 600; }
+.pack-box .big { font: 600 2.6rem/1.1 var(--display); color: var(--coral); }
+.pack-box s { color: var(--ink-soft); }
+.pack-box .btn { margin-top: 14px; width: 100%; }
+
+/* depoimentos */
+.quotes { display: grid; gap: 22px; }
+blockquote { margin: 0; padding: 22px 24px; background: var(--paper); border-radius: 28px 28px 28px 6px; box-shadow: 0 0 0 2px var(--line); font-size: 1.12rem; }
+blockquote:nth-child(2) { border-radius: 28px 28px 6px 28px; }
+blockquote footer { margin-top: 12px; font-size: .92rem; font-weight: 700; color: var(--ink-soft); }
+@media (min-width: 760px) { .quotes { grid-template-columns: 1fr 1fr; } }
+
+/* onde */
+.where { display: grid; gap: 32px; }
+.where dl { margin: 18px 0 0; display: grid; gap: 14px; }
+.where dt { font: 600 1.05rem var(--display); }
+.where dd { margin: 0; color: var(--ink-soft); }
+.where .map { background: var(--sea-soft); border-radius: var(--r); min-height: 220px; display: grid; place-items: center; padding: 20px; text-align: center; }
+.where .map svg { width: 100%; max-width: 360px; height: auto; }
+@media (min-width: 820px) { .where { grid-template-columns: 1fr 1fr; gap: 56px; } }
+
+/* rodape */
+footer.site { background: var(--ink); color: var(--sand); padding: 36px 0 28px; font-size: .95rem; }
+footer.site .inner { display: grid; gap: 10px; }
+footer.site a { color: inherit; }
+footer.site small { opacity: .8; }
+@media (prefers-color-scheme: dark) { footer.site { background: #120c09; } }
+
+@media (max-width: 420px) { section { padding-block: 52px; } .chip span { padding: 8px 14px; } .svc-list li { flex-wrap: wrap; } .svc-list .price { margin-left: 0; width: 100%; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Demo criada por Rubens Dev. <a href="https://rubensdev.com.br/">Quer um site assim?</a> Pet shop fictício.</div>
+
+<header class="top">
+  <div class="inner">
+    <a class="logo" href="#topo" aria-label="Patas do Mucuripe, início">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="11" fill="#c8442a"/><ellipse cx="16" cy="21" rx="6.5" ry="5.2" fill="#fff"/><circle cx="8.5" cy="14" r="2.6" fill="#fff"/><circle cx="13" cy="9.5" r="2.6" fill="#fff"/><circle cx="19" cy="9.5" r="2.6" fill="#fff"/><circle cx="23.5" cy="14" r="2.6" fill="#fff"/></svg>
+      Patas do Mucuripe
+    </a>
+    <nav aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#quanto">Quanto fica</a>
+      <a href="#acompanhe">Acompanhe</a>
+      <a href="#pacote">Pacote</a>
+      <a href="#onde">Onde estamos</a>
+    </nav>
+    <a class="btn" href="#quanto">Ver preço</a>
+  </div>
+</header>
+
+<main id="topo">
+<section class="hero">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">Banho e tosa no Mucuripe</p>
+      <h1>Seu pet volta <span>cheiroso</span> e você nem precisa sair de casa</h1>
+      <p class="lead">Banho, tosa e leva e traz em Fortaleza. A gente busca, cuida com calma e avisa você em cada etapa.</p>
+      <div class="actions">
+        <a class="btn" href="#quanto">Quanto fica pro meu pet?</a>
+        <a class="btn alt" href="#acompanhe">Ver como funciona</a>
+      </div>
+      <ul class="hero-facts">
+        <li>Leva e traz a partir de R$ 8</li>
+        <li>Cães e gatos</li>
+        <li>Seg a sáb</li>
+      </ul>
+    </div>
+    <div class="blob"><img src="img/hero.webp" width="1024" height="769" alt="Buldogue francês preto e branco de boca aberta, parecendo sorrir"></div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C150 52 300 0 450 18 S750 50 900 24 S1100 0 1200 20 V46 H0Z"/></svg>
+
+<section id="servicos" class="band-paper" style="padding-top:36px">
+  <div class="inner services">
+    <div>
+      <div class="sec-head">
+        <p class="eyebrow">Serviços</p>
+        <h2>O que a gente faz por aqui</h2>
+        <p class="lead">Os valores variam com o porte e a pelagem. Os preços abaixo são para um cachorro pequeno de pelo curto.</p>
+      </div>
+      <ul class="svc-list">
+        <li><div><b>Banho</b><span>Shampoo adequado à pele, secagem e perfume.</span></div><span class="price">R$ 55</span></li>
+        <li><div><b>Tosa higiênica</b><span>Barriga, patas e região íntima, junto com o banho.</span></div><span class="price">+ R$ 25</span></li>
+        <li><div><b>Tosa na máquina ou na tesoura</b><span>Você mostra a foto do corte que quer, a gente faz.</span></div><span class="price">+ R$ 40</span></li>
+        <li><div><b>Hidratação</b><span>Para pelo ressecado ou embaraçado.</span></div><span class="price">+ R$ 30</span></li>
+        <li><div><b>Corte de unhas</b><span>Rápido e sem estresse.</span></div><span class="price">+ R$ 15</span></li>
+        <li><div><b>Leva e traz</b><span>Ida e volta, conforme o bairro.</span></div><span class="price">R$ 8 a 20</span></li>
+      </ul>
+    </div>
+    <div class="svc-photos">
+      <figure>
+        <div class="blob"><img src="img/banho.webp" width="900" height="675" loading="lazy" alt="Cachorrinho molhado e de pelo bagunçado dentro da banheira"></div>
+        <figcaption>Todo banho acaba assim: com pelo voando.</figcaption>
+      </figure>
+      <figure>
+        <div class="blob"><img src="img/gato.webp" width="900" height="680" loading="lazy" alt="Gato malhado deitado olhando para a câmera"></div>
+        <figcaption>Gatos também são bem-vindos. Banho só com o tutor combinado antes.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="quanto">
+  <div class="inner">
+    <div class="sec-head">
+      <p class="eyebrow">Calculadora</p>
+      <h2>Quanto fica pro meu pet?</h2>
+      <p class="lead">Escolha as opções e veja o valor na hora. Dá para mandar tudo pronto no WhatsApp para agendar.</p>
+    </div>
+    <div class="calc">
+      <form id="calc" onsubmit="return false">
+        <fieldset>
+          <legend>Quem vem tomar banho?</legend>
+          <div class="chips" data-name="especie">
+            <label class="chip"><input type="radio" name="especie" value="cachorro" checked><span>Cachorro</span></label>
+            <label class="chip"><input type="radio" name="especie" value="gato"><span>Gato</span></label>
+          </div>
+        </fieldset>
+        <fieldset id="fs-porte">
+          <legend>Porte</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="porte" value="0"><span>Mini<small>até 5 kg</small></span></label>
+            <label class="chip"><input type="radio" name="porte" value="1" checked><span>Pequeno<small>5 a 10 kg</small></span></label>
+            <label class="chip"><input type="radio" name="porte" value="2"><span>Médio<small>10 a 20 kg</small></span></label>
+            <label class="chip"><input type="radio" name="porte" value="3"><span>Grande<small>20 a 35 kg</small></span></label>
+            <label class="chip"><input type="radio" name="porte" value="4"><span>Gigante<small>35 kg+</small></span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Pelagem</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="pelo" value="curta" checked><span>Curta</span></label>
+            <label class="chip"><input type="radio" name="pelo" value="longa"><span>Longa ou cacheada</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Serviço</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="servico" value="banho" checked><span>Só banho</span></label>
+            <label class="chip"><input type="radio" name="servico" value="higienica"><span>Banho e tosa higiênica</span></label>
+            <label class="chip"><input type="radio" name="servico" value="completa"><span>Banho e tosa completa</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Quer acrescentar?</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="extra" value="hidratacao"><span>Hidratação</span></label>
+            <label class="chip"><input type="checkbox" name="extra" value="unhas"><span>Corte de unhas</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><label for="bairro">Leva e traz</label></legend>
+          <select id="bairro" name="bairro"></select>
+        </fieldset>
+      </form>
+
+      <aside class="result" aria-live="polite">
+        <h3>Valor estimado</h3>
+        <div class="total" id="total">R$ 55</div>
+        <p class="note">Estimativa. O valor final é confirmado na hora de agendar, depois que a gente vê o pelo do seu pet.</p>
+        <ul class="lines" id="lines"></ul>
+        <a class="btn" id="wa-calc" href="#" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C150 52 300 0 450 18 S750 50 900 24 S1100 0 1200 20 V46 H0Z"/></svg>
+
+<section id="acompanhe" class="band-paper" style="padding-top:36px">
+  <div class="inner track">
+    <div>
+      <span class="sim-tag">Simulação: nada disso é enviado de verdade</span>
+      <h2>Acompanhe o banho</h2>
+      <p class="lead" style="margin:12px 0 26px">Quem usa o leva e traz recebe um aviso e uma foto a cada etapa, no WhatsApp. Clique para ver um exemplo com o Thor.</p>
+      <ol class="steps" id="steps">
+        <li data-n="1">Buscamos<small>Saímos da sua casa com o pet na caixinha.</small></li>
+        <li data-n="2">Banho<small>Água morna e shampoo para o tipo de pelo.</small></li>
+        <li data-n="3">Secagem<small>Secador com calma, sem susto.</small></li>
+        <li data-n="4">Perfume e laço<small>Capricho final antes da foto.</small></li>
+        <li data-n="5">A caminho de casa<small>Hora de abrir o portão.</small></li>
+      </ol>
+      <button class="btn" id="play" type="button">Ver como funciona</button>
+    </div>
+    <div class="phone" aria-live="polite">
+      <div class="hd"><span>Patas do Mucuripe</span><span id="clock">08:40</span></div>
+      <div class="notif">
+        <div class="pic"><img id="notif-img" src="img/leva-traz.webp" width="900" height="598" loading="lazy" alt="Dois cachorros olhando pela janela de um carro"></div>
+        <div class="msg"><b id="notif-title">Aguardando</b><span id="notif-text">Clique em "Ver como funciona" para começar a simulação.</span></div>
+      </div>
+      <p class="sim-foot">Exemplo ilustrativo. As fotos são só para a demonstração.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pacote">
+  <div class="inner">
+    <div class="pack">
+      <div>
+        <p class="eyebrow">Pacote mensal</p>
+        <h2>4 banhos por mês, 15% mais barato</h2>
+        <p class="lead">Quem leva toda semana ou a cada 15 dias fecha o mês e economiza. O horário fica reservado para você.</p>
+        <ul>
+          <li>Um banho por semana, sempre no mesmo dia e horário</li>
+          <li>Leva e traz sem custo nos bairros até R$ 12</li>
+          <li>Hidratação e unhas podem entrar à parte</li>
+        </ul>
+      </div>
+      <div class="pack-box">
+        <p class="lbl">Para o pet que você montou na calculadora</p>
+        <p class="big" id="pack-price">R$ 187</p>
+        <p class="lbl">por mês, no lugar de <s id="pack-full">R$ 220</s></p>
+        <a class="btn" id="wa-pack" href="#" target="_blank" rel="noopener">Quero o pacote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-paper">
+  <div class="inner">
+    <div class="sec-head">
+      <p class="eyebrow">Quem já levou</p>
+      <h2>O que os tutores falam</h2>
+    </div>
+    <div class="quotes">
+      <blockquote>
+        “Eu trabalho o dia todo e a Mel nunca ia ao banho. Agora ela é buscada de manhã e eu recebo a foto antes do almoço.”
+        <footer>Camila, tutora da Mel (shih tzu)</footer>
+      </blockquote>
+      <blockquote>
+        “O Bidu tinha pavor de secador. Eles foram devagar e hoje ele entra abanando o rabo.”
+        <footer>Tiago, tutor do Bidu (vira-lata caramelo)</footer>
+      </blockquote>
+    </div>
+    <p style="margin-top:14px;font-size:.85rem;color:var(--ink-soft)">Depoimentos fictícios, escritos para a demo.</p>
+  </div>
+</section>
+
+<section id="onde">
+  <div class="inner where">
+    <div>
+      <p class="eyebrow">Onde estamos</p>
+      <h2>Vem conhecer, ou a gente vai até você</h2>
+      <dl>
+        <div><dt>Endereço</dt><dd>Rua das Jangadeiras, 318, Mucuripe, Fortaleza-CE (endereço fictício)</dd></div>
+        <div><dt>Horário</dt><dd>Segunda a sexta, 8h às 18h. Sábado, 8h às 15h.</dd></div>
+        <div><dt>Instagram</dt><dd>@patasdomucuripe</dd></div>
+      </dl>
+      <p style="margin-top:22px"><a class="btn" id="wa-geral" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a></p>
+    </div>
+    <div class="map" role="img" aria-label="Desenho simples de um mapa com a loja marcada">
+      <svg viewBox="0 0 320 220" aria-hidden="true"><path d="M0 150 C60 120 90 175 160 150 S270 120 320 150 V220 H0Z" fill="#9fd4c8" opacity=".7"/><path d="M20 60 H300 M80 20 V130 M200 20 V130" stroke="#c8442a" stroke-width="5" stroke-linecap="round" fill="none" opacity=".35"/><circle cx="140" cy="60" r="16" fill="#c8442a"/><circle cx="140" cy="60" r="6" fill="#fff"/></svg>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <strong>Patas do Mucuripe</strong>
+    <span>Banho, tosa e leva e traz. Projeto conceito: negócio, endereço e depoimentos são fictícios.</span>
+    <small>Fotos: domínio público (CC0/PDM) via Openverse. Site feito por <a href="https://rubensdev.com.br/">Rubens Dev</a>.</small>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var WA = "https://wa.me/5585985366270?text=";
+  var NOME = "[Demo Patas do Mucuripe] ";
+  var PORTES = ["mini", "pequeno", "médio", "grande", "gigante"];
+  var BASE = [45, 55, 75, 95, 120], LONGO = [10, 15, 20, 25, 30];
+  var HIG = 25, COMPL = [35, 40, 50, 65, 80], HID = [25, 30, 40, 50, 60], UNHAS = 15;
+  var GATO = { base: 70, longo: 15, hid: 30 };
+  var BAIRROS = [["", "Não quero, eu levo", 0], ["Mucuripe", "Mucuripe", 8], ["Meireles", "Meireles", 10], ["Varjota", "Varjota", 10],
+    ["Aldeota", "Aldeota", 12], ["Papicu", "Papicu", 12], ["Praia de Iracema", "Praia de Iracema", 12],
+    ["Cocó", "Cocó", 15], ["Dionísio Torres", "Dionísio Torres", 15], ["Edson Queiroz", "Edson Queiroz", 20]];
+  var $ = function (id) { return document.getElementById(id); };
+  var sel = $("bairro");
+  BAIRROS.forEach(function (b, i) {
+    var o = document.createElement("option");
+    o.value = i; o.textContent = b[2] ? b[1] + " (R$ " + b[2] + " ida e volta)" : b[1];
+    sel.appendChild(o);
+  });
+  var form = $("calc");
+  var rs = function (n) { return "R$ " + Math.round(n); };
+  var val = function (name) { var e = form.querySelector('input[name="' + name + '"]:checked'); return e ? e.value : ""; };
+  var state = {};
+
+  function calc() {
+    var gato = val("especie") === "gato";
+    var fsPorte = $("fs-porte");
+    fsPorte.hidden = gato;
+    var compl = form.querySelector('input[name="servico"][value="completa"]');
+    compl.disabled = gato;
+    if (gato && compl.checked) form.querySelector('input[name="servico"][value="banho"]').checked = true;
+    var p = +val("porte") || 0;
+    var longo = val("pelo") === "longa";
+    var serv = val("servico");
+    var lines = [];
+    var base = gato ? GATO.base : BASE[p];
+    lines.push([gato ? "Banho de gato" : "Banho, porte " + PORTES[p], base]);
+    var core = base;
+    if (longo) { var l = gato ? GATO.longo : LONGO[p]; lines.push(["Pelo longo ou cacheado", l]); core += l; }
+    if (serv === "higienica") { lines.push(["Tosa higiênica", HIG]); core += HIG; }
+    if (serv === "completa") { lines.push(["Tosa completa", COMPL[p]]); core += COMPL[p]; }
+    var extras = 0, nomesExtras = [];
+    if (form.querySelector('input[value="hidratacao"]').checked) { var h = gato ? GATO.hid : HID[p]; lines.push(["Hidratação", h]); extras += h; nomesExtras.push("hidratação"); }
+    if (form.querySelector('input[value="unhas"]').checked) { lines.push(["Corte de unhas", UNHAS]); extras += UNHAS; nomesExtras.push("corte de unhas"); }
+    var b = BAIRROS[+sel.value];
+    if (b[2]) lines.push(["Leva e traz, " + b[0], b[2]]);
+    var total = core + extras + b[2];
+    $("total").textContent = rs(total);
+    $("lines").innerHTML = lines.map(function (x) { return "<li><span>" + x[0] + "</span><span>" + rs(x[1]) + "</span></li>"; }).join("");
+
+    var desc = (gato ? "gato" : "cachorro " + PORTES[p]) + ", pelo " + (longo ? "longo/cacheado" : "curto");
+    var servTxt = { banho: "só banho", higienica: "banho e tosa higiênica", completa: "banho e tosa completa" }[serv];
+    var msg = NOME + "Oi! Quero agendar para meu " + desc + ": " + servTxt +
+      (nomesExtras.length ? ", com " + nomesExtras.join(" e ") : "") +
+      (b[2] ? ". Leva e traz: " + b[0] : ". Eu mesmo levo") +
+      ". Valor estimado no site: " + rs(total) + ". Quais horários vocês têm?";
+    $("wa-calc").href = WA + encodeURIComponent(msg);
+
+    // pacote: 4 banhos com 15% de desconto; leva e traz grátis ate R$ 12
+    var full = core * 4;
+    var pk = full * 0.85;
+    var taxa = b[2] > 12 ? b[2] * 4 : 0;
+    $("pack-price").textContent = rs(pk + taxa);
+    $("pack-full").textContent = rs(full + b[2] * 4);
+    var pm = NOME + "Oi! Quero o pacote mensal de 4 banhos para meu " + desc + " (" + servTxt + ")" +
+      (b[2] ? ", com leva e traz de " + b[0] : "") + ". Valor estimado no site: " + rs(pk + taxa) + " por mês. Como funciona para começar?";
+    $("wa-pack").href = WA + encodeURIComponent(pm);
+  }
+  form.addEventListener("change", calc);
+  calc();
+  $("wa-geral").href = WA + encodeURIComponent(NOME + "Oi! Vi o site e queria tirar uma dúvida sobre banho e tosa.");
+
+  // acompanhe o banho (simulacao)
+  var steps = $("steps").children;
+  var DATA = [
+    { t: "Buscamos o Thor", x: "Ele já está na caixinha e a caminho da loja.", img: "leva-traz.webp", alt: "Dois cachorros olhando pela janela de um carro", h: "08:40" },
+    { t: "Hora do banho", x: "Thor está na água morna. Bem comportado até agora.", img: "banho.webp", alt: "Cachorrinho molhado e de pelo bagunçado dentro da banheira", h: "09:10" },
+    { t: "Secagem", x: "Secador em temperatura baixa e muito carinho.", img: "banho.webp", alt: "Cachorrinho molhado e de pelo bagunçado dentro da banheira", h: "09:50" },
+    { t: "Perfume e laço", x: "Ficou lindo! Segue a foto do resultado.", img: "hero.webp", alt: "Buldogue francês preto e branco de boca aberta, parecendo sorrir", h: "10:20" },
+    { t: "A caminho de casa", x: "Thor está saindo agora. Chegamos em cerca de 15 minutos.", img: "leva-traz.webp", alt: "Dois cachorros olhando pela janela de um carro", h: "10:35" }
+  ];
+  var timer = null, btn = $("play");
+  function show(i) {
+    for (var k = 0; k < steps.length; k++) steps[k].className = k < i ? "done" : (k === i ? "now" : "");
+    var d = DATA[i];
+    $("notif-title").textContent = d.t; $("notif-text").textContent = d.x; $("clock").textContent = d.h;
+    var im = $("notif-img"); im.src = "img/" + d.img; im.alt = d.alt;
+  }
+  function done() {
+    for (var k = 0; k < steps.length; k++) steps[k].className = "done";
+    btn.textContent = "Ver de novo"; btn.disabled = false;
+  }
+  btn.addEventListener("click", function () {
+    clearInterval(timer);
+    var i = 0;
+    btn.disabled = true; btn.textContent = "Simulando...";
+    show(0);
+    timer = setInterval(function () {
+      i++;
+      if (i >= DATA.length) { clearInterval(timer); show(DATA.length - 1); done(); return; }
+      show(i);
+    }, 2200);
+  });
+})();
+</script>
+</body>
+</html>

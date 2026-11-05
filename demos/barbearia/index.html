@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barbearia Jangada | Corte e barba no Benfica, Fortaleza</title>
+<meta name="description" content="Projeto conceito de landing page para barbearia de bairro em Fortaleza, com agendamento simulado e galeria dos barbeiros. Feito por Rubens Dev.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#14232a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314232a'/%3E%3Cpath d='M11 5h10v22H11z' fill='%23efe4cc'/%3E%3Cpath d='M11 9l10 5v4L11 13zM11 19l10 5v3h-1l-9-4.5z' fill='%23b8401f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Libre+Franklin:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#14232a; --bg-2:#1b2f38; --bg-3:#0f1a1f;
+  --cream:#efe4cc; --cream-dim:#c9bfa9;
+  --brick:#a8391b; --brick-hi:#f0906f;
+  --line:rgba(239,228,204,.22);
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Libre Franklin",system-ui,sans-serif;
+  --pad:clamp(16px,5vw,32px);
+  --gap:clamp(56px,9vw,104px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:12px}
+body{margin:0;background:var(--bg);color:var(--cream);font:400 1.0625rem/1.6 var(--body);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+[hidden]{display:none!important}
+.inner{max-width:1080px;margin:0 auto;padding-inline:max(var(--pad),env(safe-area-inset-left,0px)) max(var(--pad),env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.92;margin:0;letter-spacing:.01em;text-wrap:balance}
+h2{font-size:clamp(2.6rem,9vw,4.4rem)}
+h3{font-size:1.6rem;font-weight:800}
+p{margin:0}
+.eyebrow{font:600 .8rem var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--brick-hi);margin-bottom:12px}
+.lead{color:var(--cream-dim);max-width:52ch;margin-top:16px}
+section{padding-block:var(--gap)}
+.stripe{height:10px;background:repeating-linear-gradient(-45deg,var(--brick) 0 14px,var(--cream) 14px 28px,#2b5a6b 28px 42px,var(--cream) 42px 56px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 1rem var(--body);padding:14px 24px;min-height:48px;border:2px solid var(--cream);background:var(--brick);color:#fff4e0;text-decoration:none;cursor:pointer;border-radius:2px;letter-spacing:.02em}
+.btn:hover{background:#c04624}
+.btn.ghost{background:transparent}
+.btn.ghost:hover{background:rgba(239,228,204,.1)}
+.btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+:focus-visible{outline:3px solid var(--brick-hi);outline-offset:3px}
+
+/* faixa demo */
+.demo{background:var(--bg-3);font-size:.8rem;text-align:center;padding:7px 12px;color:var(--cream-dim)}
+.demo a{color:var(--cream)}
+
+/* topo */
+.top .inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
+.logo{font:900 1.7rem/1 var(--display);text-transform:uppercase;text-decoration:none;letter-spacing:.03em;display:flex;align-items:center;gap:10px}
+.logo i{display:block;width:14px;height:30px;border:2px solid var(--cream);background:repeating-linear-gradient(-55deg,var(--brick) 0 5px,var(--cream) 5px 10px)}
+.top nav{display:none;gap:24px;font-weight:500;font-size:.95rem}
+.top nav a{text-decoration:none;color:var(--cream-dim)}
+.top nav a:hover{color:var(--cream)}
+.top .btn{padding:10px 16px;min-height:44px;font-size:.92rem}
+@media(min-width:760px){.top nav{display:flex}}
+
+/* hero */
+.hero{padding-block:clamp(28px,6vw,64px) var(--gap)}
+.hero .inner{display:grid;gap:32px;align-items:center}
+.hero h1{font-size:clamp(3.6rem,17vw,8.2rem);line-height:.86}
+.hero h1 em{font-style:normal;color:var(--brick-hi)}
+.hero .lead{font-size:1.1rem}
+.hero .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .info{margin-top:28px;font-size:.92rem;color:var(--cream-dim);display:flex;flex-wrap:wrap;gap:6px 18px}
+.hero .info b{color:var(--cream);font-weight:600}
+.halftone{position:relative;overflow:hidden;background:var(--bg-3)}
+.halftone img{width:100%;height:100%;object-fit:cover;filter:grayscale(.55) contrast(1.05) sepia(.25)}
+.halftone::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle,var(--bg) 38%,transparent 42%) 0 0/6px 6px;
+  -webkit-mask-image:linear-gradient(to top,#000 0,rgba(0,0,0,.2) 55%,transparent 85%);
+  mask-image:linear-gradient(to top,#000 0,rgba(0,0,0,.2) 55%,transparent 85%)}
+.hero .foto{border:2px solid var(--cream);aspect-ratio:4/3.4;box-shadow:10px 10px 0 var(--brick);margin-right:10px}
+@media(min-width:860px){.hero .inner{grid-template-columns:1.15fr .85fr;gap:56px}.hero .foto{aspect-ratio:4/5}}
+
+/* servicos */
+.servicos{background:var(--bg-2)}
+.lista{list-style:none;margin:36px 0 0;padding:0;border-top:2px solid var(--cream)}
+.lista li{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:18px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.lista .nome{font:800 1.55rem/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.lista .preco{font:900 1.8rem/1 var(--display);color:var(--brick-hi)}
+.lista .desc{grid-column:1;color:var(--cream-dim);font-size:.95rem}
+.lista .dur{grid-column:2;text-align:right;font-size:.85rem;color:var(--cream-dim)}
+@media(min-width:760px){.lista{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}}
+.nota{margin-top:20px;font-size:.9rem;color:var(--cream-dim)}
+
+/* agendamento */
+.agenda-grid{display:grid;gap:40px;margin-top:36px}
+@media(min-width:900px){.agenda-grid{grid-template-columns:1fr 340px;align-items:start}}
+fieldset{border:0;padding:0;margin:0 0 30px;min-width:0}
+legend{padding:0;margin-bottom:12px;font:800 1.4rem/1 var(--display);text-transform:uppercase;letter-spacing:.03em}
+legend span{display:inline-block;width:1.7rem;height:1.7rem;line-height:1.7rem;text-align:center;background:var(--cream);color:var(--bg);margin-right:8px;font-size:1.1rem}
+.opcoes{display:flex;flex-wrap:wrap;gap:8px}
+.opcoes label{position:relative}
+.opcoes input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.opcoes label>span{display:flex;flex-direction:column;justify-content:center;min-height:48px;padding:8px 14px;border:2px solid var(--line);font-weight:500;font-size:.95rem;line-height:1.25;border-radius:2px}
+.opcoes label>span small{color:var(--cream-dim);font-size:.8rem}
+.opcoes input:checked+span{background:var(--cream);color:var(--bg);border-color:var(--cream)}
+.opcoes input:checked+span small{color:#3c4a50}
+.opcoes input:focus-visible+span{outline:3px solid var(--brick-hi);outline-offset:3px}
+.opcoes input:disabled{cursor:not-allowed}
+.opcoes input:disabled+span{opacity:.4;text-decoration:line-through;border-style:dashed}
+.dias label>span{min-width:62px;align-items:center;text-align:center}
+.dias b{font:800 1.5rem/1 var(--display)}
+.horas{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px}
+.horas label>span{align-items:center;font-variant-numeric:tabular-nums}
+.dica{color:var(--cream-dim);font-size:.9rem;margin-top:10px}
+.resumo{background:var(--cream);color:var(--bg);padding:24px;position:relative;border-radius:2px}
+.resumo::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;background:repeating-linear-gradient(-45deg,var(--brick) 0 10px,transparent 10px 20px)}
+.resumo h3{margin:6px 0 14px;font-size:2rem}
+.resumo dl{margin:0}
+.resumo dt{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#4d5a60;margin-top:12px}
+.resumo dd{margin:2px 0 0;font-weight:600}
+.resumo .total{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--bg);margin-top:18px;padding-top:12px}
+.resumo .total b{font:900 2.4rem/1 var(--display)}
+.resumo .btn{width:100%;margin-top:16px;border-color:var(--bg)}
+.resumo .dica{color:#4d5a60}
+@media(min-width:900px){.resumo{position:sticky;top:16px}}
+
+/* barbeiros */
+.barbeiros{background:var(--bg-2)}
+.filtros{display:grid;gap:8px;margin:32px 0 28px}
+@media(min-width:760px){.filtros{grid-template-columns:repeat(4,1fr)}}
+.filtros button{font:inherit;text-align:left;background:transparent;color:var(--cream);border:2px solid var(--line);padding:12px 14px;min-height:48px;cursor:pointer;border-radius:2px}
+.filtros button b{display:block;font:800 1.4rem/1 var(--display);text-transform:uppercase;letter-spacing:.03em}
+.filtros button small{color:var(--cream-dim);font-size:.85rem}
+.filtros button[aria-pressed="true"]{background:var(--cream);color:var(--bg);border-color:var(--cream)}
+.filtros button[aria-pressed="true"] small{color:#3c4a50}
+.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:760px){.galeria{grid-template-columns:repeat(4,1fr);gap:14px}}
+.galeria figure{margin:0}
+.galeria .halftone{aspect-ratio:4/5;border:2px solid var(--cream)}
+.galeria figcaption{font-size:.85rem;margin-top:8px;color:var(--cream-dim)}
+.galeria figcaption b{color:var(--cream);font-weight:600}
+.galeria .halftone::after{background-size:5px 5px}
+
+/* plano */
+.plano .caixa{display:grid;gap:0;margin-top:36px;border:2px solid var(--cream)}
+.plano .opc{padding:26px var(--pad);display:grid;gap:12px;align-content:start}
+.plano .opc+.opc{border-top:2px dashed var(--line)}
+.plano .valor{font:900 3.6rem/1 var(--display);color:var(--brick-hi)}
+.plano .valor small{font:500 1rem var(--body);color:var(--cream-dim)}
+.plano ul{margin:0;padding:0;list-style:none;color:var(--cream-dim);font-size:.95rem}
+.plano li{padding:4px 0 4px 20px;position:relative}
+.plano li::before{content:"";position:absolute;left:0;top:.8em;width:10px;height:3px;background:var(--brick-hi)}
+@media(min-width:760px){.plano .caixa{grid-template-columns:1fr 1fr}.plano .opc+.opc{border-top:0;border-left:2px dashed var(--line)}}
+.plano .btn{justify-self:start;margin-top:6px}
+
+/* endereco */
+.local{background:var(--bg-2)}
+.local .cols{display:grid;gap:36px;margin-top:36px}
+@media(min-width:760px){.local .cols{grid-template-columns:1fr 1fr;gap:56px}}
+.horario{width:100%;border-collapse:collapse}
+.horario th,.horario td{padding:10px 0;border-bottom:1px dashed var(--line);text-align:left;font-weight:400}
+.horario td{text-align:right;font-variant-numeric:tabular-nums}
+.horario tr.hoje th,.horario tr.hoje td{color:var(--brick-hi);font-weight:600}
+.status{display:inline-block;margin-top:14px;font-weight:600}
+.status::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;background:var(--cream-dim)}
+.status.on::before{background:#7bd88f}
+address{font-style:normal;font-size:1.2rem;line-height:1.5}
+.local p{margin-top:12px;color:var(--cream-dim)}
+.local p.status{color:var(--cream)}
+
+/* rodape */
+footer{background:var(--bg-3);padding-block:40px calc(40px + env(safe-area-inset-bottom,0px));font-size:.9rem;color:var(--cream-dim)}
+footer .inner{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:baseline}
+footer .logo{color:var(--cream)}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Demo criada por Rubens Dev. <a href="https://rubensdev.com.br/">Quer um site assim?</a></div>
+
+<header class="top">
+  <div class="inner">
+    <a class="logo" href="#"><i aria-hidden="true"></i>Jangada</a>
+    <nav aria-label="Principal">
+      <a href="#servicos">Serviços</a><a href="#agendar">Agendar</a><a href="#barbeiros">Barbeiros</a><a href="#plano">Plano mensal</a><a href="#local">Endereço</a>
+    </nav>
+    <a class="btn" href="#agendar">Marcar horário</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">Barbearia Jangada · Benfica</p>
+      <h1>Corte e barba, <em>hora marcada</em></h1>
+      <p class="lead">Três barbeiros, três cadeiras e fila que anda. Escolha o serviço, o barbeiro e o horário aqui mesmo e a gente confirma pelo WhatsApp.</p>
+      <div class="acoes">
+        <a class="btn" href="#agendar">Escolher horário</a>
+        <a class="btn ghost" href="#servicos">Ver preços</a>
+      </div>
+      <p class="info"><span><b>Seg a sex</b> 9h às 19h</span><span><b>Sáb</b> 8h às 17h</span><span><b>Dom</b> fechado</span></p>
+    </div>
+    <div class="foto halftone"><img src="img/hero.webp" width="1024" height="632" alt="Navalha de cabo aberta ao lado de um pincel de barba sobre uma bancada de madeira escura"></div>
+  </div>
+</section>
+<div class="stripe" aria-hidden="true"></div>
+
+<section class="servicos" id="servicos">
+  <div class="inner">
+    <p class="eyebrow">Serviços e preços</p>
+    <h2>Tabela na parede, tabela aqui</h2>
+    <ul class="lista">
+      <li><span class="nome">Corte</span><span class="preco">R$ 40</span><span class="desc">Degradê, social ou na tesoura, com acabamento na navalha.</span><span class="dur">40 min</span></li>
+      <li><span class="nome">Barba</span><span class="preco">R$ 28</span><span class="desc">Toalha quente, navalha e hidratante.</span><span class="dur">25 min</span></li>
+      <li><span class="nome">Corte + barba</span><span class="preco">R$ 62</span><span class="desc">O combo mais pedido. Sai mais barato que separado.</span><span class="dur">1 h</span></li>
+      <li><span class="nome">Pigmentação</span><span class="preco">R$ 45</span><span class="desc">Cobre falhas na barba ou no cabelo curto.</span><span class="dur">30 min</span></li>
+      <li><span class="nome">Sobrancelha</span><span class="preco">R$ 15</span><span class="desc">Na navalha, só o que precisa.</span><span class="dur">10 min</span></li>
+      <li><span class="nome">Hidratação</span><span class="preco">R$ 30</span><span class="desc">Para quem fez química ou pega muito sol.</span><span class="dur">20 min</span></li>
+    </ul>
+    <p class="nota">Pagamento em Pix, cartão ou dinheiro. Criança até 10 anos paga R$ 30 no corte.</p>
+  </div>
+</section>
+
+<section id="agendar">
+  <div class="inner">
+    <p class="eyebrow">Agendamento</p>
+    <h2>Marque em 4 passos</h2>
+    <p class="lead">Os horários abaixo são de exemplo, para mostrar como funcionaria. No fim, o pedido vai pronto para o WhatsApp.</p>
+    <form class="agenda-grid" id="form" onsubmit="return false">
+      <div>
+        <fieldset><legend><span>1</span>Serviço</legend><div class="opcoes" id="serv"></div><p class="dica">Pode marcar mais de um. Para corte e barba juntos, o combo sai mais em conta.</p></fieldset>
+        <fieldset><legend><span>2</span>Barbeiro</legend><div class="opcoes" id="barb"></div></fieldset>
+        <fieldset><legend><span>3</span>Dia</legend><div class="opcoes dias" id="dias"></div></fieldset>
+        <fieldset><legend><span>4</span>Horário</legend><div class="horas opcoes" id="horas"></div><p class="dica" id="dica-hora"></p></fieldset>
+      </div>
+      <aside class="resumo" aria-live="polite">
+        <h3>Seu horário</h3>
+        <dl>
+          <dt>Serviços</dt><dd id="r-serv">Nenhum ainda</dd>
+          <dt>Barbeiro</dt><dd id="r-barb">Qualquer um</dd>
+          <dt>Quando</dt><dd id="r-quando">Escolha dia e horário</dd>
+        </dl>
+        <div class="total"><span id="r-dur">0 min</span><b id="r-total">R$ 0</b></div>
+        <a class="btn" id="zap" href="#" aria-disabled="true" target="_blank" rel="noopener">Confirmar no WhatsApp</a>
+        <p class="dica" id="r-dica">Falta escolher o serviço.</p>
+      </aside>
+    </form>
+  </div>
+</section>
+
+<section class="barbeiros" id="barbeiros">
+  <div class="inner">
+    <p class="eyebrow">Quem corta</p>
+    <h2>Os barbeiros e os trabalhos</h2>
+    <p class="lead">Toque no nome para ver só o que cada um faz melhor.</p>
+    <div class="filtros" role="group" aria-label="Filtrar trabalhos por barbeiro" id="filtros">
+      <button type="button" data-f="todos" aria-pressed="true"><b>Todos</b><small>7 trabalhos</small></button>
+      <button type="button" data-f="davi" aria-pressed="false"><b>Davi</b><small>Degradê e corte social</small></button>
+      <button type="button" data-f="nelson" aria-pressed="false"><b>Nelson</b><small>Barba na navalha</small></button>
+      <button type="button" data-f="caio" aria-pressed="false"><b>Caio</b><small>Clássico e acabamento</small></button>
+    </div>
+    <div class="galeria" id="galeria">
+      <figure data-b="davi"><div class="halftone"><img src="img/davi-1.webp" width="640" height="623" loading="lazy" alt="Barbeiro passando o pente no cabelo de um cliente, foto em preto e branco"></div><figcaption><b>Davi</b> · degradê na máquina</figcaption></figure>
+      <figure data-b="nelson"><div class="halftone"><img src="img/nelson-1.webp" width="700" height="611" loading="lazy" alt="Lâmina de uma navalha de cabo sobre madeira escura"></div><figcaption><b>Nelson</b> · navalha afiada</figcaption></figure>
+      <figure data-b="caio"><div class="halftone"><img src="img/caio-1.webp" width="720" height="960" loading="lazy" alt="Cadeira de barbeiro de couro preto ao lado de espelhos com moldura de madeira"></div><figcaption><b>Caio</b> · a cadeira da casa</figcaption></figure>
+      <figure data-b="davi"><div class="halftone"><img src="img/davi-2.webp" width="604" height="560" loading="lazy" alt="Nuca de um cliente com o cabelo recém-cortado, em preto e branco"></div><figcaption><b>Davi</b> · nuca com acabamento</figcaption></figure>
+      <figure data-b="nelson"><div class="halftone"><img src="img/nelson-2.webp" width="520" height="512" loading="lazy" alt="Pincel de barba e navalha sobre a bancada"></div><figcaption><b>Nelson</b> · pincel e espuma</figcaption></figure>
+      <figure data-b="caio"><div class="halftone"><img src="img/caio-2.webp" width="720" height="520" loading="lazy" alt="Parede da barbearia com espelhos, gaveteiro de madeira e cadeira"></div><figcaption><b>Caio</b> · estação de trabalho</figcaption></figure>
+      <figure data-b="caio"><div class="halftone"><img src="img/caio-3.webp" width="500" height="500" loading="lazy" alt="Poste listrado de barbearia, vermelho, branco e azul, na fachada"></div><figcaption><b>Caio</b> · o poste na porta</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="plano" id="plano">
+  <div class="inner">
+    <p class="eyebrow">Plano mensal</p>
+    <h2>Corte à vontade, preço fixo</h2>
+    <p class="lead">Para quem corta toda semana. Você paga no começo do mês e vem quando precisar.</p>
+    <div class="caixa">
+      <div class="opc">
+        <h3>Só corte</h3>
+        <p class="valor">R$ 119<small> /mês</small></p>
+        <ul><li>Corte ilimitado, até 1 por semana</li><li>Sobrancelha inclusa</li><li>Horário marcado, sem fila</li></ul>
+        <a class="btn" data-msg="Quero saber mais do plano mensal Só corte (R$ 119/mês)." href="https://wa.me/5585985366270">Quero este plano</a>
+      </div>
+      <div class="opc">
+        <h3>Corte + barba</h3>
+        <p class="valor">R$ 179<small> /mês</small></p>
+        <ul><li>Corte e barba ilimitados, até 1 vez por semana</li><li>Sobrancelha inclusa</li><li>10% de desconto em pigmentação</li></ul>
+        <a class="btn" data-msg="Quero saber mais do plano mensal Corte + barba (R$ 179/mês)." href="https://wa.me/5585985366270">Quero este plano</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="local" id="local">
+  <div class="inner">
+    <p class="eyebrow">Endereço e horário</p>
+    <h2>Fica no Benfica</h2>
+    <div class="cols">
+      <div>
+        <address>Rua Coronel Aldemir Sá, 412<br>Benfica, Fortaleza-CE</address>
+        <p>Perto da Praça da Gentilândia, a duas quadras do ponto de ônibus da Avenida da Universidade. Tem bicicletário na calçada.</p>
+        <p>Instagram: @barbearia.jangada</p>
+        <p class="status" id="status"></p>
+      </div>
+      <table class="horario" id="horario">
+        <tbody>
+          <tr data-d="1"><th scope="row">Segunda</th><td>9h às 19h</td></tr>
+          <tr data-d="2"><th scope="row">Terça</th><td>9h às 19h</td></tr>
+          <tr data-d="3"><th scope="row">Quarta</th><td>9h às 19h</td></tr>
+          <tr data-d="4"><th scope="row">Quinta</th><td>9h às 19h</td></tr>
+          <tr data-d="5"><th scope="row">Sexta</th><td>9h às 19h</td></tr>
+          <tr data-d="6"><th scope="row">Sábado</th><td>8h às 17h</td></tr>
+          <tr data-d="0"><th scope="row">Domingo</th><td>Fechado</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="stripe" aria-hidden="true"></div>
+<footer>
+  <div class="inner">
+    <a class="logo" href="#"><i aria-hidden="true"></i>Jangada</a>
+    <p>Barbearia fictícia. Projeto conceito, nenhum horário é real.</p>
+    <p>Fotos: domínio público (CC0/PDM) via Openverse</p>
+    <p>Demo criada por Rubens Dev. <a href="https://rubensdev.com.br/">Quer um site assim?</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var NOME="Barbearia Jangada", ZAP="https://wa.me/5585985366270?text=";
+  var msg=function(t){return ZAP+encodeURIComponent("[Demo "+NOME+"] "+t)};
+  var SERV=[
+    {id:"corte",n:"Corte",p:40,d:40},
+    {id:"barba",n:"Barba",p:28,d:25},
+    {id:"combo",n:"Corte + barba",p:62,d:60},
+    {id:"pig",n:"Pigmentação",p:45,d:30},
+    {id:"sob",n:"Sobrancelha",p:15,d:10},
+    {id:"hid",n:"Hidratação",p:30,d:20}
+  ];
+  var BARB=[{id:"qualquer",n:"Qualquer um"},{id:"davi",n:"Davi"},{id:"nelson",n:"Nelson"},{id:"caio",n:"Caio"}];
+  var REAIS=BARB.slice(1);
+  var HOR={0:null,1:[540,1140],2:[540,1140],3:[540,1140],4:[540,1140],5:[540,1140],6:[480,1020]};
+  var DS=["dom","seg","ter","qua","qui","sex","sáb"], DL=["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
+  var $=function(i){return document.getElementById(i)};
+  var p2=function(n){return (n<10?"0":"")+n};
+  var key=function(d){return d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"+p2(d.getDate())};
+  var hm=function(m){return p2(Math.floor(m/60))+":"+p2(m%60)};
+  var fmtDur=function(m){return m>=60?Math.floor(m/60)+" h"+(m%60?" "+p2(m%60):""):m+" min"};
+  var money=function(v){return "R$ "+v};
+  var byId=function(list,id){return list.filter(function(x){return x.id===id})[0]};
+
+  // ocupados: determinístico por dia + barbeiro + horário
+  function hash(s){var x=2166136261;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)}x^=x>>>13;x=Math.imul(x,1274126177);return (x^(x>>>16))>>>0}
+  function busy(day,b,i){return hash(key(day)+"|"+b+"|"+i)%100<38}
+
+  var hoje=new Date(); hoje.setHours(0,0,0,0);
+  var dias=[]; for(var i=0;i<7;i++){var d=new Date(hoje);d.setDate(hoje.getDate()+i);dias.push(d)}
+  var st={serv:[],barb:"qualquer",dia:null,hora:null,quem:null};
+
+  function opt(type,name,id,html,checked,disabled){
+    return '<label><input type="'+type+'" name="'+name+'" value="'+id+'"'+(checked?" checked":"")+(disabled?" disabled":"")+'><span>'+html+'</span></label>';
+  }
+  $("serv").innerHTML=SERV.map(function(s){return opt("checkbox","serv",s.id,s.n+"<small>"+money(s.p)+" · "+fmtDur(s.d)+"</small>")}).join("");
+  $("barb").innerHTML=BARB.map(function(b){return opt("radio","barb",b.id,b.n,b.id==="qualquer")}).join("");
+  $("dias").innerHTML=dias.map(function(d,i){
+    var closed=!HOR[d.getDay()];
+    return opt("radio","dia",String(i),"<small>"+(i===0?"hoje":DS[d.getDay()])+"</small><b>"+p2(d.getDate())+"</b><small>"+(closed?"fechado":p2(d.getMonth()+1)+"/"+String(d.getFullYear()).slice(2))+"</small>",false,closed);
+  }).join("");
+
+  function totals(){
+    var p=0,d=0;st.serv.forEach(function(id){var s=byId(SERV,id);p+=s.p;d+=s.d});
+    return {p:p,d:d};
+  }
+  // devolve o barbeiro livre para o slot, ou null
+  function livre(day,i,n,total,b){
+    var lista=b==="qualquer"?REAIS:REAIS.filter(function(x){return x.id===b});
+    for(var j=0;j<lista.length;j++){
+      var ok=i+n<=total;
+      for(var k=0;ok&&k<n;k++){if(busy(day,lista[j].id,i+k))ok=false}
+      if(ok)return lista[j];
+    }
+    return null;
+  }
+  function renderHoras(){
+    var box=$("horas"),dica=$("dica-hora");
+    if(st.dia===null){box.innerHTML="";st.hora=null;dica.textContent="Escolha o dia para ver os horários.";return}
+    if(!st.serv.length){box.innerHTML="";st.hora=null;dica.textContent="Escolha o serviço para ver os horários que cabem.";return}
+    var day=dias[st.dia],h=HOR[day.getDay()],total=(h[1]-h[0])/30,n=Math.ceil(totals().d/30);
+    var agora=new Date(),nowMin=agora.getHours()*60+agora.getMinutes(),isHoje=st.dia===0,html="",livres=0,achou=false;
+    for(var i=0;i<total;i++){
+      var m=h[0]+i*30,pass=isHoje&&m<=nowMin+15;
+      var b=pass?null:livre(day,i,n,total,st.barb);
+      if(b)livres++;
+      var sel=st.hora===i&&!!b;if(sel)achou=true;
+      html+=opt("radio","hora",String(i),hm(m),sel,!b);
+    }
+    box.innerHTML=html;
+    if(!achou)st.hora=null;
+    dica.textContent=livres?"Riscados já estão ocupados ou não cabem no tempo do serviço.":"Sem horário livre neste dia. Tente outro dia ou outro barbeiro.";
+  }
+  function renderResumo(){
+    var t=totals(),zap=$("zap"),faltas=[];
+    var servTxt=st.serv.length?st.serv.map(function(id){return byId(SERV,id).n}).join(" + "):"Nenhum ainda";
+    $("r-serv").textContent=servTxt;
+    $("r-dur").textContent=fmtDur(t.d);$("r-total").textContent=money(t.p);
+    var quem="Qualquer um",quando="Escolha dia e horário",pronto=st.serv.length&&st.dia!==null&&st.hora!==null;
+    st.quem=null;
+    if(st.dia!==null&&st.hora!==null){
+      var day=dias[st.dia],h=HOR[day.getDay()],total=(h[1]-h[0])/30,n=Math.ceil(t.d/30);
+      var b=livre(day,st.hora,n,total,st.barb);
+      if(b){st.quem=b.n;quem=st.barb==="qualquer"?b.n+" (primeiro livre)":b.n}
+      quando=DL[day.getDay()]+", "+p2(day.getDate())+"/"+p2(day.getMonth()+1)+" às "+hm(h[0]+st.hora*30);
+    }else if(st.barb!=="qualquer")quem=byId(BARB,st.barb).n;
+    $("r-barb").textContent=quem;$("r-quando").textContent=quando;
+    if(!st.serv.length)faltas.push("o serviço");
+    if(st.dia===null)faltas.push("o dia");else if(st.hora===null&&st.serv.length)faltas.push("o horário");
+    if(pronto){
+      var texto="Oi! Quero agendar: "+servTxt+" ("+fmtDur(t.d)+") com "+(st.quem||"qualquer barbeiro")+", "+quando+". Total: "+money(t.p)+". Meu nome é ";
+      zap.href=msg(texto);zap.removeAttribute("aria-disabled");$("r-dica").textContent="Abre o WhatsApp com a mensagem pronta. Só falta o seu nome.";
+    }else{
+      zap.href="#";zap.setAttribute("aria-disabled","true");$("r-dica").textContent="Falta escolher "+faltas.join(" e ")+".";
+    }
+  }
+  $("form").addEventListener("change",function(e){
+    var el=e.target,v=el.value;
+    if(el.name==="serv")st.serv=Array.prototype.map.call(document.querySelectorAll("input[name=serv]:checked"),function(x){return x.value});
+    if(el.name==="barb")st.barb=v;
+    if(el.name==="dia"){st.dia=+v;st.hora=null}
+    if(el.name==="hora")st.hora=+v;
+    renderHoras();renderResumo();
+  });
+  renderHoras();renderResumo();
+
+  // galeria
+  var fb=document.querySelectorAll("#filtros button"),figs=document.querySelectorAll("#galeria figure");
+  Array.prototype.forEach.call(fb,function(b){
+    b.addEventListener("click",function(){
+      Array.prototype.forEach.call(fb,function(x){x.setAttribute("aria-pressed",String(x===b))});
+      Array.prototype.forEach.call(figs,function(f){f.hidden=b.dataset.f!=="todos"&&f.dataset.b!==b.dataset.f});
+    });
+  });
+
+  // plano
+  Array.prototype.forEach.call(document.querySelectorAll("[data-msg]"),function(a){a.href=msg(a.dataset.msg);a.target="_blank";a.rel="noopener"});
+
+  // horário de hoje
+  var n=new Date(),dw=n.getDay(),hh=HOR[dw],min=n.getHours()*60+n.getMinutes();
+  var row=document.querySelector('#horario tr[data-d="'+dw+'"]');if(row)row.className="hoje";
+  var aberto=hh&&min>=hh[0]&&min<hh[1],s=$("status");
+  s.className="status"+(aberto?" on":"");
+  s.textContent=aberto?"Aberto agora, fecha às "+hm(hh[1]).replace(":00","h"):"Fechado agora";
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clínica Odonto Iracema | Dentista na Aldeota, Fortaleza (demo)</title>
+<meta name="description" content="Projeto conceito de site para clínica odontológica na Aldeota, Fortaleza. Pré-agendamento guiado pelo WhatsApp. Demo criada por Rubens Dev.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23faf7f2'/%3E%3Cpath d='M16 9c-2-2-6-1.500-6.500 2-.4 3 1.500 5 2 8 .3 2 1 3 1.800 3 1 0 1-2.500 2.700-3.500 1.700 1 1.700 3.500 2.700 3.500.8 0 1.500-1 1.800-3 .5-3 2.400-5 2-8C22 7.500 18 7 16 9z' fill='none' stroke='%234a6657' stroke-width='1.600'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#faf7f2; --paper-2:#f1ece3; --ink:#222d27; --ink-soft:#4d5b53;
+  --sage:#4a6657; --sage-soft:#dfe7e0; --line:rgba(34,45,39,.16); --warn:#8a3b24; --warn-bg:#f6e4da;
+  --serif:"Newsreader",Georgia,serif; --sans:"Hanken Grotesk",system-ui,sans-serif;
+  --gap:clamp(72px,11vw,128px);
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#161c18; --paper-2:#1d2520; --ink:#eae6dd; --ink-soft:#b3bdb5;
+  --sage:#a5c2b0; --sage-soft:#26332b; --line:rgba(234,230,221,.18); --warn:#f0b79d; --warn-bg:#3a241b; color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--sans);overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sage);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left))}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.5rem,7.5vw,4.6rem);letter-spacing:-.015em}
+h1 em,h2 em{font-style:italic;color:var(--sage)}
+h2{font-size:clamp(2rem,5vw,3.1rem);letter-spacing:-.01em}
+h3{font-size:1.4rem}
+p{margin:0}
+section{padding:var(--gap) 0}
+.kicker{font:600 .78rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:18px}
+.lead{color:var(--ink-soft);max-width:56ch;margin-top:20px}
+.demo-bar{background:var(--ink);color:var(--paper);font-size:.85rem;text-align:center;padding:8px 16px}
+.demo-bar a{text-underline-offset:3px}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0}
+.brand{font:500 1.35rem var(--serif);text-decoration:none}
+.brand span{color:var(--sage);font-style:italic}
+header nav{display:none;gap:28px;font-size:.95rem}
+header nav a{text-decoration:none;color:var(--ink-soft)}
+header nav a:hover{color:var(--ink)}
+@media(min-width:820px){header nav{display:flex}}
+.btn{display:inline-block;background:var(--sage);color:var(--paper);font:600 1rem var(--sans);padding:14px 26px;border-radius:999px;border:0;text-decoration:none;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+@media(prefers-color-scheme:dark){.btn:not(.ghost){color:#12201a}}
+/* hero */
+.hero{padding:clamp(32px,6vw,72px) 0 var(--gap);display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.hero{grid-template-columns:1.05fr .95fr}}
+.hero p.lead{font-size:1.15rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.iso{width:100%;height:auto;display:block;overflow:visible}
+.iso g.layer{transition:transform .25s ease-out}
+.iso path{fill:var(--paper);stroke:var(--sage);stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.iso path.nf{fill:none}
+.iso.on path{animation:draw 1.6s cubic-bezier(.5,0,.2,1) forwards;animation-delay:calc(var(--i)*.07s)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.iso path{stroke-dashoffset:0;animation:none!important}.iso g.layer{transition:none}html{scroll-behavior:auto}.btn{transition:none}}
+/* especialidades */
+.spec{margin:48px 0 0;padding:0;border-top:1px solid var(--line)}
+.spec li{list-style:none;display:grid;gap:6px 32px;padding:26px 0;border-bottom:1px solid var(--line)}
+@media(min-width:760px){.spec li{grid-template-columns:280px 1fr}}
+.spec h3{font-size:1.5rem}
+.spec p{color:var(--ink-soft);max-width:58ch}
+/* primeira consulta */
+.alt{background:var(--paper-2)}
+.steps{margin:48px 0 0;padding:0;list-style:none;counter-reset:s;display:grid;gap:36px}
+@media(min-width:820px){.steps{grid-template-columns:repeat(2,1fr);gap:44px 64px}}
+.steps li{counter-increment:s;padding-left:64px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-6px;font:italic 400 2.6rem/1 var(--serif);color:var(--sage)}
+.steps h3{margin-bottom:6px}
+.steps p{color:var(--ink-soft)}
+/* equipe */
+.team{display:grid;gap:40px;margin-top:48px}
+@media(min-width:760px){.team{grid-template-columns:1fr 1fr}}
+.doc{display:flex;gap:20px;align-items:flex-start}
+.ini{flex:none;width:76px;height:76px;border-radius:50%;border:1px solid var(--sage);display:grid;place-items:center;font:italic 400 1.8rem var(--serif);color:var(--sage)}
+.doc .cro{font-size:.88rem;color:var(--ink-soft);margin:2px 0 10px}
+.doc p:last-child{color:var(--ink-soft)}
+/* convênios */
+.conv{display:flex;flex-wrap:wrap;gap:10px;margin:36px 0 0;padding:0;list-style:none}
+.conv li{border:1px solid var(--line);border-radius:999px;padding:8px 20px;font-weight:500}
+.note{font-size:.92rem;color:var(--ink-soft);margin-top:20px;max-width:60ch}
+/* faq */
+.faq{margin-top:44px;border-top:1px solid var(--line);max-width:760px}
+.faq h3{font:inherit}
+.faq button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:22px 0;font:400 1.3rem/1.3 var(--serif);color:var(--ink)}
+.faq button:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
+.faq button::after{content:"+";font:300 1.8rem/1 var(--sans);color:var(--sage);transition:transform .2s}
+.faq button[aria-expanded=true]::after{transform:rotate(45deg)}
+.faq .item{border-bottom:1px solid var(--line)}
+.faq .panel{padding:0 0 24px;color:var(--ink-soft);max-width:62ch}
+/* agendamento */
+.book{background:var(--sage-soft)}
+.form{margin-top:40px;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:clamp(22px,4vw,40px);max-width:760px}
+.prog{display:flex;gap:8px;margin-bottom:28px}
+.prog i{flex:1;height:3px;background:var(--line);border-radius:2px}
+.prog i.on{background:var(--sage)}
+.form fieldset{border:0;padding:0;margin:0;min-width:0}
+.form legend{font:400 1.6rem/1.2 var(--serif);margin-bottom:6px;padding:0}
+.form .hint{color:var(--ink-soft);font-size:.95rem;margin-bottom:20px}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opts label{position:relative}
+.opts input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.opts span{display:block;border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-weight:500}
+.opts input:checked+span{background:var(--sage);border-color:var(--sage);color:var(--paper)}
+@media(prefers-color-scheme:dark){.opts input:checked+span{color:#12201a}}
+.opts input:focus-visible+span{outline:2px solid var(--sage);outline-offset:3px}
+.sub{margin:24px 0 10px;font-weight:600;font-size:.95rem}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;flex-wrap:wrap}
+.back{background:none;border:0;color:var(--ink-soft);font:500 .95rem var(--sans);cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:10px 0}
+.urg{background:var(--warn-bg);color:var(--warn);border-left:3px solid var(--warn);padding:14px 18px;margin-bottom:20px;font-weight:500}
+.summary{border:1px solid var(--line);padding:16px 20px;border-radius:4px;color:var(--ink-soft);margin-bottom:24px}
+.summary strong{color:var(--ink)}
+.err{color:var(--warn);font-size:.9rem;min-height:1.4em;margin-top:12px}
+/* endereço */
+.where{display:grid;gap:40px;margin-top:44px}
+@media(min-width:800px){.where{grid-template-columns:1fr 1fr}}
+.where h3{margin-bottom:10px}
+.where ul{margin:0;padding:0;list-style:none;color:var(--ink-soft)}
+.where li{padding:7px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.where li:last-child{border-bottom:0}
+.where p{color:var(--ink-soft)}
+footer{border-top:1px solid var(--line);padding:44px 0 56px;font-size:.92rem;color:var(--ink-soft)}
+footer .wrap{display:grid;gap:12px}
+footer strong{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo criada por Rubens Dev. <a href="https://rubensdev.com.br/">Quer um site assim?</a></div>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#topo">Odonto <span>Iracema</span></a>
+    <nav aria-label="Principal">
+      <a href="#especialidades">Especialidades</a>
+      <a href="#primeira-consulta">Primeira consulta</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#agendar">Agendar</a>
+    </nav>
+  </header>
+
+  <main id="topo">
+    <div class="hero">
+      <div>
+        <p class="kicker">Aldeota, Fortaleza</p>
+        <h1>Cuidar do sorriso, <em>sem pressa</em> e sem susto.</h1>
+        <p class="lead">Uma clínica pequena, com duas dentistas e agenda que respeita o seu tempo. Na primeira consulta a gente conversa, examina e explica tudo antes de propor qualquer tratamento.</p>
+        <div class="cta">
+          <a class="btn" href="#agendar">Pré-agendar pelo WhatsApp</a>
+          <a class="btn ghost" href="#primeira-consulta">Como é a primeira consulta</a>
+        </div>
+      </div>
+      <svg class="iso" id="iso" viewBox="0 -80 620 540" role="img" aria-label="Ilustração em linhas finas de uma cadeira de dentista em perspectiva isométrica, ao lado de um dente.">
+        <g class="layer" data-depth="4">
+<path d="M300.0 150.0 L559.8 300.0 L300.0 450.0 L40.2 300.0 Z" pathLength="1" style="--i:0" class="nf"/>
+<path d="M364.9 187.5 L105.2 337.5" pathLength="1" style="--i:1" class="nf"/>
+<path d="M235.1 187.5 L494.9 337.5" pathLength="1" style="--i:1" class="nf"/>
+<path d="M429.9 225.0 L170.1 375.0" pathLength="1" style="--i:1" class="nf"/>
+<path d="M170.1 225.0 L429.9 375.0" pathLength="1" style="--i:1" class="nf"/>
+<path d="M494.9 262.5 L235.1 412.5" pathLength="1" style="--i:1" class="nf"/>
+<path d="M105.2 262.5 L364.9 412.5" pathLength="1" style="--i:1" class="nf"/>
+<path d="M196.1 289.5 L300.0 349.5 L300.0 360.0 L196.1 300.0 Z" pathLength="1" style="--i:2"/><path d="M403.9 289.5 L300.0 349.5 L300.0 360.0 L403.9 300.0 Z" pathLength="1" style="--i:3"/><path d="M300.0 229.5 L403.9 289.5 L300.0 349.5 L196.1 289.5 Z" pathLength="1" style="--i:4"/>
+<path d="M279.2 234.0 L300.0 246.0 L300.0 301.5 L279.2 289.5 Z" pathLength="1" style="--i:4"/><path d="M320.8 234.0 L300.0 246.0 L300.0 301.5 L320.8 289.5 Z" pathLength="1" style="--i:5"/><path d="M300.0 222.0 L320.8 234.0 L300.0 246.0 L279.2 234.0 Z" pathLength="1" style="--i:6"/>
+<path d="M289.6 -3.0 L300.0 3.0 L300.0 190.5 L289.6 184.5 Z" pathLength="1" style="--i:6"/><path d="M310.4 -3.0 L300.0 3.0 L300.0 190.5 L310.4 184.5 Z" pathLength="1" style="--i:7"/><path d="M300.0 -9.0 L310.4 -3.0 L300.0 3.0 L289.6 -3.0 Z" pathLength="1" style="--i:8"/>
+<path d="M300.0 -3.0 L255.8 4.5 L289.6 42.0" pathLength="1" style="--i:8" class="nf"/>
+<path d="M268.8 48.0 L300.0 66.0 L300.0 78.0 L268.8 60.0 Z" pathLength="1" style="--i:9"/><path d="M326.0 51.0 L300.0 66.0 L300.0 78.0 L326.0 63.0 Z" pathLength="1" style="--i:10"/><path d="M294.8 33.0 L326.0 51.0 L300.0 66.0 L268.8 48.0 Z" pathLength="1" style="--i:11"/>
+<path d="M198.7 106.5 L219.5 118.5 L219.5 214.5 L198.7 202.5 Z" pathLength="1" style="--i:11"/><path d="M287.0 79.5 L219.5 118.5 L219.5 214.5 L287.0 175.5 Z" pathLength="1" style="--i:12"/><path d="M266.2 67.5 L287.0 79.5 L219.5 118.5 L198.7 106.5 Z" pathLength="1" style="--i:13"/>
+<path d="M214.3 70.5 L229.9 79.5 L229.9 106.5 L214.3 97.5 Z" pathLength="1" style="--i:14"/><path d="M271.4 55.5 L229.9 79.5 L229.9 106.5 L271.4 82.5 Z" pathLength="1" style="--i:15"/><path d="M255.8 46.5 L271.4 55.5 L229.9 79.5 L214.3 70.5 Z" pathLength="1" style="--i:16"/>
+<path d="M216.9 210.0 L294.8 255.0 L294.8 273.0 L216.9 228.0 Z" pathLength="1" style="--i:16"/><path d="M367.5 213.0 L294.8 255.0 L294.8 273.0 L367.5 231.0 Z" pathLength="1" style="--i:17"/><path d="M289.6 168.0 L367.5 213.0 L294.8 255.0 L216.9 210.0 Z" pathLength="1" style="--i:18"/>
+<path d="M307.8 265.5 L352.0 291.0 L352.0 306.0 L307.8 280.5 Z" pathLength="1" style="--i:19"/><path d="M398.7 264.0 L352.0 291.0 L352.0 306.0 L398.7 279.0 Z" pathLength="1" style="--i:20"/><path d="M354.6 238.5 L398.7 264.0 L352.0 291.0 L307.8 265.5 Z" pathLength="1" style="--i:21"/>
+<path d="M445.5 283.5 L445.5 192.0" pathLength="1" style="--i:22" class="nf"/>
+<path d="M398.7 183.0 L445.5 210.0 L445.5 216.0 L398.7 189.0 Z" pathLength="1" style="--i:23"/><path d="M487.1 186.0 L445.5 210.0 L445.5 216.0 L487.1 192.0 Z" pathLength="1" style="--i:24"/><path d="M440.3 159.0 L487.1 186.0 L445.5 210.0 L398.7 183.0 Z" pathLength="1" style="--i:25"/>
+        </g>
+        <g class="layer" data-depth="12">
+          <g transform="translate(60 -60)">
+<path pathLength="1" style="--i:26" d="M470 40 C 452 24, 424 30, 420 54 C 417 76, 430 92, 436 118 C 440 140, 446 150, 454 150 C 462 150, 462 128, 470 120 C 478 128, 478 150, 486 150 C 494 150, 500 140, 504 118 C 510 92, 523 76 520 54 C 516 30, 488 24, 470 40 Z"/>
+<path pathLength="1" style="--i:28" class="nf" d="M444 52 C 450 44, 460 44, 466 50"/>
+<path pathLength="1" style="--i:29" class="nf" d="M470 40 C 470 54, 474 60, 482 62"/>
+<path pathLength="1" style="--i:30" class="nf" d="M410 214 a 60 22 0 1 0 120 0 a 60 22 0 1 0 -120 0"/>
+<path pathLength="1" style="--i:31" class="nf" d="M470 160 L470 192"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </main>
+</div>
+
+<section id="especialidades" class="alt">
+  <div class="wrap">
+    <p class="kicker">Especialidades</p>
+    <h2>O que fazemos por aqui</h2>
+    <p class="lead">Cada caso é avaliado individualmente. O plano de tratamento é combinado com você depois do exame, e não antes.</p>
+    <ul class="spec">
+      <li><h3>Clínica geral e limpeza</h3><p>Revisão, limpeza, restaurações e tratamento de gengiva. É por onde a maioria dos pacientes começa.</p></li>
+      <li><h3>Clareamento</h3><p>Indicado depois de avaliar o esmalte e a saúde dos dentes. Nem todo caso é elegível, e explicamos o motivo.</p></li>
+      <li><h3>Ortodontia</h3><p>Aparelhos fixos e alinhadores, para adultos e adolescentes, com acompanhamento regular.</p></li>
+      <li><h3>Implantes e próteses</h3><p>Reposição de dentes com planejamento por exame de imagem e conversa clara sobre as etapas.</p></li>
+      <li><h3>Odontopediatria</h3><p>Atendimento para crianças com calma e linguagem simples. Pode vir com o brinquedo preferido.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="primeira-consulta">
+  <div class="wrap">
+    <p class="kicker">Primeira consulta</p>
+    <h2>O que acontece quando você chega</h2>
+    <ol class="steps">
+      <li><h3>Conversa</h3><p>Você conta o que sente, o histórico de saúde e o que espera. Sem formulário gigante: a conversa vem primeiro.</p></li>
+      <li><h3>Exame</h3><p>Olhamos dentes, gengiva e mordida. Se precisar de radiografia, avisamos antes e explicamos para que serve.</p></li>
+      <li><h3>Explicação</h3><p>Mostramos o que encontramos na tela e em linguagem comum, sem termos que só dentista entende.</p></li>
+      <li><h3>Plano combinado</h3><p>Você sai sabendo as opções, a ordem das etapas e o que é urgente ou pode esperar. A decisão é sua.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="equipe" class="alt">
+  <div class="wrap">
+    <p class="kicker">Equipe</p>
+    <h2>Duas dentistas, um consultório</h2>
+    <div class="team">
+      <div class="doc">
+        <div class="ini" aria-hidden="true">HM</div>
+        <div>
+          <h3>Dra. Helena Marques</h3>
+          <p class="cro">CRO-CE 00000 (fictício) &middot; Clínica geral e implantes</p>
+          <p>Cuida da parte clínica e cirúrgica. Gosta de mostrar cada passo antes de começar.</p>
+        </div>
+      </div>
+      <div class="doc">
+        <div class="ini" aria-hidden="true">CA</div>
+        <div>
+          <h3>Dra. Clarice Albuquerque</h3>
+          <p class="cro">CRO-CE 00000 (fictício) &middot; Ortodontia e odontopediatria</p>
+          <p>Acompanha adolescentes e crianças e tem paciência de sobra com quem tem medo de dentista.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="convenios">
+  <div class="wrap">
+    <p class="kicker">Convênios</p>
+    <h2>Atendemos alguns convênios e particular</h2>
+    <ul class="conv">
+      <li>OdontoVida</li><li>Sorriso Saúde</li><li>Plano Mar Azul</li><li>Dental Norte</li><li>Plano Jangada</li><li>Particular</li>
+    </ul>
+    <p class="note">Demo: a lista é de exemplo. Numa clínica real ela seria a lista verdadeira, e a cobertura de cada procedimento depende do seu plano. Confirmamos tudo antes de começar.</p>
+  </div>
+</section>
+
+<section id="duvidas" class="alt">
+  <div class="wrap">
+    <p class="kicker">Perguntas frequentes</p>
+    <h2>Dúvidas que sempre aparecem</h2>
+    <div class="faq" id="faq">
+      <div class="item"><h3><button type="button" aria-expanded="false" aria-controls="f1" id="b1">Quanto tempo dura a primeira consulta?</button></h3><div class="panel" id="f1" role="region" aria-labelledby="b1" hidden>Em geral de 40 minutos a uma hora, para dar tempo de conversar e examinar sem correria.</div></div>
+      <div class="item"><h3><button type="button" aria-expanded="false" aria-controls="f2" id="b2">Preciso levar algum exame?</button></h3><div class="panel" id="f2" role="region" aria-labelledby="b2" hidden>Se tiver radiografias ou exames recentes, traga. Se não tiver, não tem problema: pedimos só o necessário.</div></div>
+      <div class="item"><h3><button type="button" aria-expanded="false" aria-controls="f3" id="b3">Vocês atendem urgência?</button></h3><div class="panel" id="f3" role="region" aria-labelledby="b3" hidden>Sim, dor é encaixada no mesmo dia, conforme a agenda. Chame no WhatsApp e diga que é dor.</div></div>
+      <div class="item"><h3><button type="button" aria-expanded="false" aria-controls="f4" id="b4">Meu convênio cobre o tratamento?</button></h3><div class="panel" id="f4" role="region" aria-labelledby="b4" hidden>Depende do plano e do procedimento. Na primeira consulta conferimos a cobertura e explicamos o que for particular antes de começar.</div></div>
+      <div class="item"><h3><button type="button" aria-expanded="false" aria-controls="f5" id="b5">Meu filho tem medo. Como funciona?</button></h3><div class="panel" id="f5" role="region" aria-labelledby="b5" hidden>A primeira visita pode ser só para conhecer o consultório. Mostramos os instrumentos e só avançamos quando a criança estiver tranquila.</div></div>
+      <div class="item"><h3><button type="button" aria-expanded="false" aria-controls="f6" id="b6">Clareamento serve para todo mundo?</button></h3><div class="panel" id="f6" role="region" aria-labelledby="b6" hidden>Não. Antes é preciso tratar cáries e gengiva e avaliar a sensibilidade. O resultado varia de pessoa para pessoa e não prometemos um tom específico.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="agendar" class="book">
+  <div class="wrap">
+    <p class="kicker">Pré-agendamento</p>
+    <h2>Três perguntas e a conversa já começa pronta</h2>
+    <p class="lead">Escolha as opções e a mensagem vai montada para o WhatsApp. A confirmação do horário é feita pela recepção.</p>
+
+    <form class="form" id="form" novalidate>
+      <div class="prog" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+
+      <fieldset data-step="1">
+        <legend>Qual o motivo da consulta?</legend>
+        <p class="hint">Passo 1 de 3</p>
+        <div class="opts">
+          <label><input type="radio" name="motivo" value="Avaliação"><span>Avaliação</span></label>
+          <label><input type="radio" name="motivo" value="Dor"><span>Dor</span></label>
+          <label><input type="radio" name="motivo" value="Limpeza"><span>Limpeza</span></label>
+          <label><input type="radio" name="motivo" value="Clareamento"><span>Clareamento</span></label>
+          <label><input type="radio" name="motivo" value="Aparelho"><span>Aparelho</span></label>
+          <label><input type="radio" name="motivo" value="Consulta para criança"><span>Criança</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset data-step="2" hidden>
+        <legend>Qual o seu convênio?</legend>
+        <p class="hint">Passo 2 de 3</p>
+        <div class="opts">
+          <label><input type="radio" name="conv" value="OdontoVida"><span>OdontoVida</span></label>
+          <label><input type="radio" name="conv" value="Sorriso Saúde"><span>Sorriso Saúde</span></label>
+          <label><input type="radio" name="conv" value="Plano Mar Azul"><span>Plano Mar Azul</span></label>
+          <label><input type="radio" name="conv" value="Dental Norte"><span>Dental Norte</span></label>
+          <label><input type="radio" name="conv" value="Plano Jangada"><span>Plano Jangada</span></label>
+          <label><input type="radio" name="conv" value="Particular"><span>Particular</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset data-step="3" hidden>
+        <legend>Qual o melhor período?</legend>
+        <p class="hint">Passo 3 de 3</p>
+        <p class="sub" style="margin-top:0">Turno</p>
+        <div class="opts">
+          <label><input type="radio" name="turno" value="manhã"><span>Manhã</span></label>
+          <label><input type="radio" name="turno" value="tarde"><span>Tarde</span></label>
+        </div>
+        <p class="sub">Dia da semana</p>
+        <div class="opts">
+          <label><input type="radio" name="dia" value="segunda"><span>Seg</span></label>
+          <label><input type="radio" name="dia" value="terça"><span>Ter</span></label>
+          <label><input type="radio" name="dia" value="quarta"><span>Qua</span></label>
+          <label><input type="radio" name="dia" value="quinta"><span>Qui</span></label>
+          <label><input type="radio" name="dia" value="sexta"><span>Sex</span></label>
+          <label><input type="radio" name="dia" value="sábado"><span>Sáb</span></label>
+        </div>
+      </fieldset>
+
+      <div id="final" hidden>
+        <div class="urg" id="urg" hidden>Atendemos urgência no mesmo dia. Se a dor for forte, escreva já e avise que é dor.</div>
+        <p class="summary" id="summary"></p>
+      </div>
+
+      <p class="err" id="err" role="alert"></p>
+      <div class="nav">
+        <button type="button" class="back" id="back" hidden>Voltar</button>
+        <button type="button" class="btn" id="next">Continuar</button>
+        <a class="btn" id="wa" href="#" target="_blank" rel="noopener" hidden>Enviar pelo WhatsApp</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="onde">
+  <div class="wrap">
+    <p class="kicker">Como chegar</p>
+    <h2>Endereço e horários</h2>
+    <div class="where">
+      <div>
+        <h3>Endereço</h3>
+        <p>Rua das Carnaúbas, 1240, sala 302<br>Aldeota, Fortaleza-CE<br>Endereço fictício, usado só nesta demo.</p>
+        <p style="margin-top:14px">Instagram: @odontoiracema.demo</p>
+        <h3 style="margin-top:28px">Acessibilidade e estacionamento</h3>
+        <p>Entrada sem degraus, elevador com acesso à sala e banheiro adaptado. Estacionamento conveniado no prédio ao lado, com vagas preferenciais para idosos e gestantes.</p>
+      </div>
+      <div>
+        <h3>Horário</h3>
+        <ul>
+          <li><span>Segunda a sexta</span><span>8h às 18h</span></li>
+          <li><span>Sábado</span><span>8h às 12h</span></li>
+          <li><span>Domingo e feriados</span><span>Fechado</span></li>
+        </ul>
+        <p style="margin-top:18px">Urgências são encaixadas no mesmo dia, dentro desses horários.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Clínica Odonto Iracema</strong>. Projeto conceito: clínica, equipe, CRO, endereço e convênios são fictícios.</p>
+    <p>Responsável técnica: Dra. Helena Marques, CRO-CE 00000 (fictício).</p>
+    <p>As informações deste site têm caráter informativo e não substituem a consulta. Resultados de tratamento variam de pessoa para pessoa.</p>
+    <p>Demo criada por Rubens Dev. <a href="https://rubensdev.com.br/">Quer um site assim?</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var iso=document.getElementById('iso');
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){iso.classList.add('on');io.disconnect()}},{threshold:.2});
+    io.observe(iso);
+  } else iso.classList.add('on');
+  if(!reduce){
+    var layers=[].slice.call(iso.querySelectorAll('.layer'));
+    var raf=0;
+    window.addEventListener('pointermove',function(ev){
+      if(raf)return;
+      raf=requestAnimationFrame(function(){
+        raf=0;
+        var nx=ev.clientX/innerWidth-.5, ny=ev.clientY/innerHeight-.5;
+        layers.forEach(function(l){
+          var d=+l.dataset.depth;
+          l.style.transform='translate('+(nx*d).toFixed(1)+'px,'+(ny*d).toFixed(1)+'px)';
+        });
+      });
+    });
+  }
+  [].forEach.call(document.querySelectorAll('.faq button'),function(b){
+    b.addEventListener('click',function(){
+      var open=b.getAttribute('aria-expanded')==='true';
+      b.setAttribute('aria-expanded',String(!open));
+      document.getElementById(b.getAttribute('aria-controls')).hidden=open;
+    });
+  });
+  var steps=[].slice.call(document.querySelectorAll('#form fieldset'));
+  var bars=document.querySelectorAll('.prog i');
+  var cur=0, nextB=document.getElementById('next'), backB=document.getElementById('back'),
+      wa=document.getElementById('wa'), err=document.getElementById('err'),
+      fin=document.getElementById('final');
+  function val(n){var c=document.querySelector('input[name="'+n+'"]:checked');return c?c.value:''}
+  function show(i){
+    cur=i; err.textContent='';
+    steps.forEach(function(s,k){s.hidden=k!==i});
+    fin.hidden=i<3; backB.hidden=i===0;
+    nextB.hidden=i>=3; wa.hidden=i<3;
+    for(var k=0;k<3;k++)bars[k].classList.toggle('on',k<=i);
+    if(i===3){
+      var m=val('motivo'),c=val('conv'),t=val('turno'),d=val('dia');
+      document.getElementById('urg').hidden=m!=='Dor';
+      document.getElementById('summary').innerHTML='<strong>Resumo:</strong> '+m+', '+(c==='Particular'?'particular':'convênio '+c)+', '+t+', de preferência '+d+'.';
+      var msg='[Demo Clínica Odonto Iracema] Olá! Gostaria de pré-agendar uma consulta.\nMotivo: '+m+'\nConvênio: '+c+'\nMelhor período: '+t+', '+d+'.'+(m==='Dor'?'\nEstou com dor e preciso de atendimento urgente.':'');
+      wa.href='https://wa.me/5585985366270?text='+encodeURIComponent(msg);
+    }
+    if(i<3&&started){var lg=steps[i].querySelector('legend');lg.setAttribute('tabindex','-1');lg.focus({preventScroll:true})}
+  }
+  nextB.addEventListener('click',function(){
+    var ok=cur===0?val('motivo'):cur===1?val('conv'):(val('turno')&&val('dia'));
+    if(!ok){err.textContent=cur===2?'Escolha o turno e o dia da semana para continuar.':'Escolha uma opção para continuar.';return}
+    show(cur+1);
+  });
+  backB.addEventListener('click',function(){show(cur-1)});
+  var started=false; show(0); started=true;
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault()});
+})();
+</script>
+</body>
+</html>
