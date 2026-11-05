@@ -1,0 +1,5 @@
+.DS_Store
+Thumbs.db
+*.bak
+.wrangler/
+node_modules/

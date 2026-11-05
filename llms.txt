@@ -1,0 +1,16 @@
+# Rubens Dev
+
+> Rubens é desenvolvedor freelancer no Brasil. Faz landing pages, cardápios digitais, sistemas sob encomenda (PDV, ERP, painéis, APIs), apps em Flutter, e manutenção e hospedagem mensal. Atende negócios locais (restaurantes, marmitarias, distribuidoras de gás e água), empresas e agências.
+
+## Serviços
+- Landing pages e cardápios digitais com pedido pelo WhatsApp
+- Sistemas sob encomenda: PDV, ERP, painéis administrativos, APIs
+- Apps mobile em Flutter
+- Manutenção, suporte e hospedagem mensal
+
+## Tecnologias
+Java, Spring Boot, Go, PostgreSQL, Vue, Flutter, React, Docker.
+
+## Contato
+- Site: https://rubensdev.com.br/
+- E-mail: contato@rubensdev.com.br

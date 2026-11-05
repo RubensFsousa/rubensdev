@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Projeto conceito de landing page para restaurante de praia, feito por Rubens (rubensdev.com.br).">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Coconut Water Restaurante</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: beach-bar landing. Full-width color bands (lagoon, husk, palm), a hero split between headline and a drawn coconut, menu as a price list with tabs. */
+:root {
+  --lagoon: #d7efe9;
+  --lagoon-deep: #9fd8cc;
+  --husk: #3b2416;
+  --husk-soft: #6d4c38;
+  --palm: #145a43;
+  --lime: #c6e84d;
+  --flesh: #ffffff;
+  --line: rgba(59,36,22,.16);
+  --bg: var(--flesh);
+  --fg: var(--husk);
+  --display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body: "Figtree", system-ui, sans-serif;
+  --mono: "DM Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --lagoon: #10302b; --lagoon-deep: #1d5a50; --husk: #f3e9df; --husk-soft: #c9b6a6; --palm: #0b2c22;
+  --lime: #c6e84d; --flesh: #17110d; --line: rgba(243,233,223,.16); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --lagoon: #10302b; --lagoon-deep: #1d5a50; --husk: #f3e9df; --husk-soft: #c9b6a6; --palm: #0b2c22;
+  --lime: #c6e84d; --flesh: #17110d; --line: rgba(243,233,223,.16); color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 400 1.0625rem/1.6 var(--body); }
+a { color: inherit; }
+.inner { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); line-height: 1; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 800; letter-spacing: -.02em; }
+.eyebrow { font: 500 .78rem var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font: 600 1rem var(--body); padding: 14px 24px; border-radius: 999px; text-decoration: none; border: 0; cursor: pointer; }
+.btn-lime { background: var(--lime); color: #1d2a05; }
+.btn-line { box-shadow: inset 0 0 0 2px currentColor; background: transparent; color: inherit; }
+.btn:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; }
+
+/* nav */
+header.top { background: var(--lagoon); }
+header.top .inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; }
+.logo { font: 800 1.25rem var(--display); letter-spacing: -.01em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.logo svg { width: 30px; height: 30px; }
+nav { display: flex; gap: 22px; font-weight: 500; }
+nav a { text-decoration: none; }
+nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 640px) { nav .hide-sm { display: none; } }
+
+/* hero */
+.hero { background: var(--lagoon); overflow: hidden; }
+.hero .inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; padding-block: 40px 72px; }
+.hero h1 { font-size: clamp(3.2rem, 11vw, 7.4rem); font-weight: 800; letter-spacing: -.035em; }
+.hero h1 em { font-style: normal; color: var(--palm); }
+:root[data-theme="dark"] .hero h1 em { color: var(--lime); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero h1 em { color: var(--lime); } }
+.hero p.lead { font-size: 1.2rem; max-width: 34ch; margin: 22px 0 28px; color: var(--husk-soft); }
+.hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero .facts { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 36px; }
+.hero .facts div { display: flex; flex-direction: column; }
+.hero .facts b { font: 800 1.6rem var(--display); }
+.hero .facts span { font: 400 .8rem var(--mono); color: var(--husk-soft); }
+.coco { width: 100%; max-width: 440px; justify-self: center; aspect-ratio: 1; }
+@media (max-width: 820px) { .hero .inner { grid-template-columns: 1fr; } .coco { max-width: 300px; order: -1; } }
+
+/* ticker */
+.ticker { background: var(--palm); color: #eaf6d6; overflow: hidden; white-space: nowrap; }
+.ticker div { display: inline-block; padding-block: 14px; font: 500 .9rem var(--mono); letter-spacing: .12em; text-transform: uppercase; animation: slide 38s linear infinite; }
+.ticker span { padding-right: 28px; }
+.ticker span::after { content: "✶"; padding-left: 28px; color: var(--lime); }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* about */
+.about .inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-block: 88px; align-items: start; }
+.about p { margin: 0 0 16px; max-width: 58ch; }
+.about .eyebrow { color: var(--palm); display: block; margin-bottom: 14px; }
+:root[data-theme="dark"] .about .eyebrow, :root[data-theme="dark"] .menu .eyebrow { color: var(--lime); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .about .eyebrow, :root:not([data-theme="light"]) .menu .eyebrow { color: var(--lime); } }
+.pillars { display: grid; gap: 18px; }
+.pillar { display: grid; grid-template-columns: 56px 1fr; gap: 14px; align-items: start; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.pillar b { font: 800 1.15rem var(--display); display: block; margin-bottom: 2px; }
+.pillar p { margin: 0; color: var(--husk-soft); font-size: .98rem; }
+.pillar .n { font: 800 2.2rem var(--display); color: var(--lagoon-deep); line-height: 1; }
+@media (max-width: 820px) { .about .inner { grid-template-columns: 1fr; padding-block: 64px; } }
+
+/* menu */
+.menu { background: var(--lagoon); }
+.menu .inner { padding-block: 88px; }
+.menu header { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+.menu .eyebrow { color: var(--palm); display: block; margin-bottom: 12px; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tabs button { font: 600 .95rem var(--body); padding: 10px 18px; border-radius: 999px; border: 0; background: transparent; color: var(--fg); box-shadow: inset 0 0 0 2px var(--line); cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--husk); color: var(--flesh); box-shadow: none; }
+.items { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
+.item { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding-block: 18px; border-bottom: 1px solid var(--line); min-width: 0; }
+.item h3 { font-size: 1.25rem; font-weight: 800; }
+.item .price { font: 500 1.05rem var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.item p { grid-column: 1 / -1; margin: 0; color: var(--husk-soft); font-size: .95rem; }
+.tag { display: inline-block; font: 500 .68rem var(--mono); letter-spacing: .08em; text-transform: uppercase; background: var(--lime); color: #1d2a05; padding: 2px 8px; border-radius: 99px; margin-left: 8px; vertical-align: middle; }
+@media (max-width: 760px) { .items { grid-template-columns: 1fr; } .menu .inner { padding-block: 64px; } }
+
+/* visit + reserve */
+.visit .inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-block: 88px; }
+.hours { width: 100%; border-collapse: collapse; margin-top: 22px; font-variant-numeric: tabular-nums; }
+.hours td { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.hours td:last-child { text-align: right; font-family: var(--mono); }
+.hours tr.today td { font-weight: 600; }
+.addr { margin-top: 26px; display: grid; gap: 6px; }
+.addr .eyebrow { color: var(--husk-soft); }
+form.reserve { background: var(--husk); color: var(--flesh); border-radius: 28px; padding: 32px; display: grid; gap: 16px; align-content: start; }
+form.reserve h2 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); }
+form.reserve .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+form.reserve label { display: grid; gap: 6px; font-size: .85rem; font-weight: 500; }
+form.reserve input, form.reserve select { font: 500 1rem var(--body); padding: 12px 14px; border-radius: 12px; border: 0; background: var(--flesh); color: var(--husk); width: 100%; min-width: 0; }
+form.reserve .btn { justify-self: start; margin-top: 4px; }
+.ok { background: var(--lime); color: #1d2a05; padding: 14px 16px; border-radius: 14px; font-weight: 500; }
+@media (max-width: 820px) { .visit .inner { grid-template-columns: 1fr; padding-block: 64px; } }
+@media (max-width: 420px) { form.reserve .row { grid-template-columns: 1fr; } form.reserve { padding: 24px; } }
+
+footer { background: var(--palm); color: #eaf6d6; }
+footer .inner { padding-block: 36px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .9rem; }
+footer .note { font-family: var(--mono); font-size: .78rem; opacity: .8; }
+
+@media (prefers-reduced-motion: reduce) { .ticker div { animation: none; } .coco .sway { animation: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="inner">
+    <a class="logo" href="#inicio" aria-label="Coconut Water, início">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="17" r="13" fill="#6d4c38"/><circle cx="16" cy="17" r="9.5" fill="#fff"/><circle cx="12" cy="13" r="1.4" fill="#3b2416"/><circle cx="20" cy="13" r="1.4" fill="#3b2416"/><circle cx="16" cy="9.6" r="1.4" fill="#3b2416"/><path d="M22 4 L26 0" stroke="#145a43" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Coconut Water
+    </a>
+    <nav>
+      <a href="#cardapio">Cardápio</a>
+      <a class="hide-sm" href="#casa">A casa</a>
+      <a href="#reserva">Reservar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="inner">
+      <div>
+        <span class="eyebrow">Pé na areia · Itacimirim, Bahia</span>
+        <h1>Peixe do dia, <em>coco gelado</em> e sombra de coqueiro.</h1>
+        <p class="lead">Cozinha baiana de mar, feita com o que chega da jangada de manhã. Mesa na areia, rede na varanda e o pôr do sol de brinde.</p>
+        <div class="ctas">
+          <a class="btn btn-lime" href="#reserva">Reservar mesa</a>
+          <a class="btn btn-line" href="#cardapio">Ver cardápio</a>
+        </div>
+        <div class="facts">
+          <div><b>11h–22h</b><span>quarta a domingo</span></div>
+          <div><b>40 m</b><span>da maré cheia</span></div>
+          <div><b>3 cocos</b><span>abertos por minuto no verão</span></div>
+        </div>
+      </div>
+      <svg class="coco" viewBox="0 0 400 400" role="img" aria-label="Ilustração de um coco verde aberto com canudo">
+        <style>.sway{transform-origin:200px 380px;animation:sway 6s ease-in-out infinite}@keyframes sway{50%{transform:rotate(-3deg)}}</style>
+        <circle cx="200" cy="210" r="168" fill="#9fd8cc"/>
+        <g class="sway">
+          <path d="M318 40 C 250 60, 230 100, 220 140" stroke="#145a43" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M230 120 C 270 90, 330 96, 362 120 C 320 112, 280 118, 236 136 Z" fill="#145a43"/>
+          <path d="M226 108 C 230 60, 270 30, 320 26 C 286 46, 258 72, 236 118 Z" fill="#1f7a5b"/>
+          <path d="M222 126 C 180 90, 120 92, 86 112 C 130 108, 170 116, 214 140 Z" fill="#1f7a5b"/>
+          <ellipse cx="200" cy="260" rx="132" ry="118" fill="#5f9e3a"/>
+          <ellipse cx="200" cy="262" rx="132" ry="118" fill="none" stroke="#3f7a24" stroke-width="4"/>
+          <path d="M120 200 C 150 170, 250 170, 280 200" stroke="#77b84e" stroke-width="10" fill="none" stroke-linecap="round" opacity=".7"/>
+          <ellipse cx="200" cy="168" rx="70" ry="26" fill="#ffffff"/>
+          <ellipse cx="200" cy="170" rx="54" ry="17" fill="#e8f3f0"/>
+          <rect x="214" y="60" width="14" height="118" rx="7" transform="rotate(18 221 120)" fill="#c6e84d"/>
+          <rect x="214" y="60" width="14" height="22" rx="7" transform="rotate(18 221 120)" fill="#e8481c"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div>
+    <span>Moqueca de robalo</span><span>Coco verde a R$ 9</span><span>Acarajé às sextas</span><span>Música ao vivo sábado 17h</span><span>Aceitamos Pix</span>
+    <span>Moqueca de robalo</span><span>Coco verde a R$ 9</span><span>Acarajé às sextas</span><span>Música ao vivo sábado 17h</span><span>Aceitamos Pix</span>
+  </div></div>
+
+  <section class="about" id="casa">
+    <div class="inner">
+      <div>
+        <span class="eyebrow">A casa</span>
+        <h2>Uma barraca que virou restaurante sem sair da areia.</h2>
+      </div>
+      <div>
+        <p>Começamos em 2014 com um isopor, um facão e trinta cocos. Hoje são quarenta mesas sob os coqueiros, mas o jeito continua o mesmo: o peixe vem dos pescadores da vila, o dendê é de Valença e o coco é aberto na hora, na sua frente.</p>
+        <div class="pillars">
+          <div class="pillar"><span class="n">01</span><div><b>Pesca da manhã</b><p>O cardápio de peixes muda conforme o que a jangada trouxe. O garçom conta o que tem.</p></div></div>
+          <div class="pillar"><span class="n">02</span><div><b>Coco aberto na hora</b><p>Coco verde de Conde, gelado no gelo de verdade, nunca de garrafa.</p></div></div>
+          <div class="pillar"><span class="n">03</span><div><b>Lixo zero na areia</b><p>Canudo de bambu, casca de coco vira adubo e as bitucas têm lixeira própria.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="cardapio">
+    <div class="inner">
+      <header>
+        <div>
+          <span class="eyebrow">Cardápio</span>
+          <h2>Do mar para a mesa</h2>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Seções do cardápio">
+          <button role="tab" id="tab-entradas" aria-selected="true" aria-controls="menu-items" data-cat="entradas">Entradas</button>
+          <button role="tab" id="tab-pratos" aria-selected="false" aria-controls="menu-items" data-cat="pratos">Pratos</button>
+          <button role="tab" id="tab-bebidas" aria-selected="false" aria-controls="menu-items" data-cat="bebidas">Bebidas</button>
+        </div>
+      </header>
+      <div class="items" id="menu-items" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="visit" id="reserva">
+    <div class="inner">
+      <div>
+        <h2>Venha com tempo.</h2>
+        <table class="hours" aria-label="Horário de funcionamento">
+          <tbody id="hours"></tbody>
+        </table>
+        <div class="addr">
+          <span class="eyebrow">Onde</span>
+          <div>Av. Beira-Mar, 1200, Barraca 7<br>Praia de Itacimirim, Camaçari, BA</div>
+          <div>WhatsApp: (71) 90000-0000</div>
+        </div>
+      </div>
+      <form class="reserve" id="form" novalidate>
+        <h2>Reserve sua mesa</h2>
+        <label for="nome">Nome<input id="nome" name="nome" required placeholder="Como chamamos você?"></label>
+        <div class="row">
+          <label for="data">Dia<input id="data" name="data" type="date" required></label>
+          <label for="hora">Horário<select id="hora" name="hora">
+            <option>12:00</option><option>13:00</option><option>14:00</option><option selected>17:00</option><option>19:00</option><option>20:30</option>
+          </select></label>
+        </div>
+        <div class="row">
+          <label for="pessoas">Pessoas<select id="pessoas" name="pessoas">
+            <option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option><option>8+</option>
+          </select></label>
+          <label for="lugar">Lugar<select id="lugar" name="lugar"><option>Na areia</option><option>Varanda</option><option>Tanto faz</option></select></label>
+        </div>
+        <button class="btn btn-lime" type="submit">Pedir reserva</button>
+        <div class="ok" id="ok" hidden></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span>© 2026 Coconut Water · Itacimirim, BA</span>
+    <span class="note">Projeto fictício de portfólio. Endereço, telefone e preços são ilustrativos.</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const menu = {
+    entradas: [
+      ["Bolinho de peixe", 38, "Seis unidades com vinagrete de manga e pimenta de cheiro.", "da casa"],
+      ["Casquinha de siri", 32, "Gratinada com farofa de dendê, servida na concha."],
+      ["Acarajé", 24, "Com vatapá, caruru e camarão seco. Só às sextas."],
+      ["Lambreta no bafo", 46, "Dúzia de lambretas no alho, limão e coentro."],
+      ["Aipim frito", 26, "Crocante por fora, com manteiga de garrafa."],
+      ["Ceviche de robalo", 49, "Leite de tigre de coco e limão, cebola roxa e milho."]
+    ],
+    pratos: [
+      ["Moqueca de robalo", 168, "Para duas pessoas. Dendê, leite de coco, arroz, pirão e farofa.", "mais pedido"],
+      ["Peixe do dia na brasa", 94, "Inteiro ou em posta, com salada de feijão-fradinho."],
+      ["Bobó de camarão", 142, "Para duas pessoas. Creme de aipim, camarão VG e arroz branco."],
+      ["Arroz de polvo", 118, "Polvo grelhado, arroz cremoso de coco e couve crocante."],
+      ["Frango na moranga", 79, "Para quem não come peixe. Catupiry, moranga assada e arroz."],
+      ["Moqueca de banana-da-terra", 88, "Vegana. Banana, castanha de caju, dendê e leite de coco."]
+    ],
+    bebidas: [
+      ["Coco verde", 9, "Aberto na hora. Leve o canudo de bambu de lembrança.", "o clássico"],
+      ["Água de coco com hortelã", 14, "Batida com gelo, hortelã e um toque de limão."],
+      ["Caipirinha de cajá", 28, "Cachaça mineira, cajá e açúcar demerara."],
+      ["Coco gelado com cachaça", 26, "O coco verde servido com dose de cachaça envelhecida."],
+      ["Suco de umbu", 16, "Da estação, sem açúcar se preferir."],
+      ["Cerveja long neck", 15, "Gelada no gelo de verdade."]
+    ]
+  };
+  const brl = v => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 0 });
+  const box = document.getElementById("menu-items");
+  function show(cat) {
+    box.innerHTML = menu[cat].map(([n, p, d, t]) =>
+      `<div class="item"><h3>${n}${t ? `<span class="tag">${t}</span>` : ""}</h3><span class="price">${brl(p)}</span><p>${d}</p></div>`).join("");
+    document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.cat === cat));
+    box.setAttribute("aria-labelledby", "tab-" + cat);
+  }
+  document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => show(b.dataset.cat)));
+  show("entradas");
+
+  const days = [["Domingo", "11h – 20h"], ["Segunda", "Fechado"], ["Terça", "Fechado"], ["Quarta", "11h – 22h"], ["Quinta", "11h – 22h"], ["Sexta", "11h – 23h"], ["Sábado", "11h – 23h"]];
+  const today = new Date().getDay();
+  const order = [3, 4, 5, 6, 0, 1, 2];
+  document.getElementById("hours").innerHTML = order.map(i =>
+    `<tr class="${i === today ? "today" : ""}"><td>${days[i][0]}${i === today ? " (hoje)" : ""}</td><td>${days[i][1]}</td></tr>`).join("");
+
+  const date = document.getElementById("data");
+  const d = new Date(); d.setDate(d.getDate() + 1);
+  date.value = d.toISOString().slice(0, 10);
+  date.min = new Date().toISOString().slice(0, 10);
+
+  document.getElementById("form").addEventListener("submit", e => {
+    e.preventDefault();
+    const ok = document.getElementById("ok");
+    const nome = document.getElementById("nome").value.trim();
+    if (!nome) { ok.hidden = false; ok.textContent = "Preencha seu nome para pedir a reserva."; document.getElementById("nome").focus(); return; }
+    const dt = new Date(date.value + "T12:00").toLocaleDateString("pt-BR", { weekday: "long", day: "numeric", month: "long" });
+    ok.hidden = false;
+    ok.textContent = `Pedido de reserva anotado, ${nome}: ${document.getElementById("pessoas").value} pessoas, ${dt}, ${document.getElementById("hora").value}, ${document.getElementById("lugar").value.toLowerCase()}. (Demonstração: nenhum pedido foi enviado.)`;
+  });
+})();
+</script>
+
+</body>
+</html>
